@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProgramsListView: View {
     @StateObject private var viewModel: ProgramsListViewModel
-    @State private var selectedTab: Int = 0
     let progressStore: ProgressStoreProtocol
     
     init(repository: ProgramRepository, progressStore: ProgressStoreProtocol) {
@@ -96,53 +95,11 @@ struct ProgramsListView: View {
                             }
                             .padding(.vertical)
                         }
-                        
-                        // Bottom navigation bar
-                        HStack {
-                            TabButton(icon: "house.fill", title: "Home", isSelected: selectedTab == 0) {
-                                selectedTab = 0
-                            }
-                            
-                            Spacer()
-                            
-                            TabButton(icon: "fork.knife", title: "Nutrition", isSelected: selectedTab == 1) {
-                                selectedTab = 1
-                            }
-                            
-                            Spacer()
-                            
-                            TabButton(icon: "gearshape.fill", title: "Settings", isSelected: selectedTab == 2) {
-                                selectedTab = 2
-                            }
-                        }
-                        .padding()
-                        .background(Color.appNavBarBackground)
                     }
                 }
             }
             .task {
                 await viewModel.loadPrograms()
-            }
-        }
-    }
-}
-
-struct TabButton: View {
-    let icon: String
-    let title: String
-    let isSelected: Bool
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 4) {
-                Image(systemName: icon)
-                    .font(.system(size: 20))
-                    .foregroundColor(isSelected ? .appPrimaryGreen : .appInactiveGray)
-                
-                Text(title)
-                    .font(.caption)
-                    .foregroundColor(isSelected ? .appPrimaryGreen : .appInactiveGray)
             }
         }
     }

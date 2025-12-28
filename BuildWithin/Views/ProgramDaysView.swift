@@ -14,6 +14,7 @@ struct ProgramDaysView: View {
     let allPrograms: [ProgramContent]
     
     @StateObject private var viewModel: ProgramDaysViewModel
+    @State private var expandedWeeks: Set<Int> = []
     
     init(program: Program, repository: ProgramRepository, progressStore: ProgressStoreProtocol, allPrograms: [ProgramContent]) {
         self.program = program
@@ -34,30 +35,72 @@ struct ProgramDaysView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                VStack(spacing: 16) {
-                    ForEach(viewModel.days) { day in
-                        NavigationLink(destination: WorkoutDayDetailView(
-                            workoutDay: day,
-                            program: program,
-                            repository: repository,
-                            progressStore: progressStore,
-                            allPrograms: allPrograms
-                        )) {
-                            DayRow(
-                                workoutDay: day,
-                                isCompleted: viewModel.isDayCompleted(day),
-                                isToday: isToday(day)
+                VStack(spacing: 0) {
+                    ForEach(viewModel.weeks) { week in
+                        VStack(spacing: 0) {
+                            // Week header
+                            WeekHeader(
+                                week: week,
+                                completedDaysCount: week.completedDaysCount(using: { viewModel.isDayCompleted($0) }),
+                                isExpanded: Binding(
+                                    get: { expandedWeeks.contains(week.weekNumber) },
+                                    set: { isExpanded in
+                                        if isExpanded {
+                                            expandedWeeks.insert(week.weekNumber)
+                                        } else {
+                                            expandedWeeks.remove(week.weekNumber)
+                                        }
+                                    }
+                                )
                             )
+                            
+                            // Days in this week (conditionally shown)
+                            if expandedWeeks.contains(week.weekNumber) {
+                                VStack(spacing: 16) {
+                                    ForEach(week.days) { day in
+                                        NavigationLink(destination: WorkoutDayDetailView(
+                                            workoutDay: day,
+                                            program: program,
+                                            repository: repository,
+                                            progressStore: progressStore,
+                                            allPrograms: allPrograms
+                                        )) {
+                                            DayRow(
+                                                workoutDay: day,
+                                                isCompleted: viewModel.isDayCompleted(day),
+                                                isToday: isToday(day)
+                                            )
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
+                                    }
+                                    .padding(.horizontal)
+                                }
+                                .padding(.vertical, 16)
+                                .transition(.opacity.combined(with: .move(edge: .top)))
+                            }
                         }
-                        .buttonStyle(PlainButtonStyle())
+                        
+                        // Add spacing between weeks (but not after the last week)
+                        if let lastWeek = viewModel.weeks.last, week.id != lastWeek.id {
+                            Divider()
+                                .background(Color.appTextSecondary.opacity(0.3))
+                                .padding(.horizontal)
+                                .padding(.vertical, 8)
+                        }
                     }
-                    .padding(.horizontal)
                 }
                 .padding(.vertical)
+            }
+            .onAppear {
+                // Expand first week by default
+                if expandedWeeks.isEmpty, let firstWeek = viewModel.weeks.first {
+                    expandedWeeks.insert(firstWeek.weekNumber)
+                }
             }
         }
         .navigationTitle(program.title)
         .navigationBarTitleDisplayMode(.large)
+        .toolbar(.hidden, for: .tabBar)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {}) {
