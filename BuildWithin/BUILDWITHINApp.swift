@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BUILDWITHINApp: App {
+    @StateObject private var repository = ProgramRepository()
+    private let progressStore = ProgressStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProgramsListView(repository: repository, progressStore: progressStore)
         }
     }
 }

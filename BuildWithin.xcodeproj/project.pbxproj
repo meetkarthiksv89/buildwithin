@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A09BA14D2F00B86000471082 /* BUILDWITHIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUILDWITHIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09BA14D2F00B86000471082 /* BuildWithin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildWithin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A09BA14F2F00B86000471082 /* BUILDWITHIN */ = {
+		A09BA14F2F00B86000471082 /* BuildWithin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BUILDWITHIN;
+			path = BuildWithin;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		A09BA1442F00B86000471082 = {
 			isa = PBXGroup;
 			children = (
-				A09BA14F2F00B86000471082 /* BUILDWITHIN */,
+				A09BA14F2F00B86000471082 /* BuildWithin */,
 				A09BA14E2F00B86000471082 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		A09BA14E2F00B86000471082 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A09BA14D2F00B86000471082 /* BUILDWITHIN.app */,
+				A09BA14D2F00B86000471082 /* BuildWithin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A09BA14C2F00B86000471082 /* BUILDWITHIN */ = {
+		A09BA14C2F00B86000471082 /* BuildWithin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A09BA1582F00B86100471082 /* Build configuration list for PBXNativeTarget "BUILDWITHIN" */;
+			buildConfigurationList = A09BA1582F00B86100471082 /* Build configuration list for PBXNativeTarget "BuildWithin" */;
 			buildPhases = (
 				A09BA1492F00B86000471082 /* Sources */,
 				A09BA14A2F00B86000471082 /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A09BA14F2F00B86000471082 /* BUILDWITHIN */,
+				A09BA14F2F00B86000471082 /* BuildWithin */,
 			);
-			name = BUILDWITHIN;
+			name = BuildWithin;
 			packageProductDependencies = (
 			);
 			productName = BUILDWITHIN;
-			productReference = A09BA14D2F00B86000471082 /* BUILDWITHIN.app */;
+			productReference = A09BA14D2F00B86000471082 /* BuildWithin.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A09BA1482F00B86000471082 /* Build configuration list for PBXProject "BUILDWITHIN" */;
+			buildConfigurationList = A09BA1482F00B86000471082 /* Build configuration list for PBXProject "BuildWithin" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A09BA14C2F00B86000471082 /* BUILDWITHIN */,
+				A09BA14C2F00B86000471082 /* BuildWithin */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +261,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,6 +294,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,7 +315,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A09BA1482F00B86000471082 /* Build configuration list for PBXProject "BUILDWITHIN" */ = {
+		A09BA1482F00B86000471082 /* Build configuration list for PBXProject "BuildWithin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A09BA1562F00B86100471082 /* Debug */,
@@ -322,7 +324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A09BA1582F00B86100471082 /* Build configuration list for PBXNativeTarget "BUILDWITHIN" */ = {
+		A09BA1582F00B86100471082 /* Build configuration list for PBXNativeTarget "BuildWithin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A09BA1592F00B86100471082 /* Debug */,

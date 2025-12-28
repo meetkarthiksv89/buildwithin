@@ -1,0 +1,551 @@
+{
+  "program": {
+    "id": "prog_leangain_4week_01",
+    "title": "4-Week Lean Gain",
+    "subtitle": "Muscle Gain • Strength Building",
+    "category": "strength",
+    "coverImageURL": "leangain_4week_cover.jpg",
+    "totalDays": 28,
+    "isActive": true
+  },
+  "workoutDays": [
+    {
+      "id": "week1_day1_upper",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 1,
+      "title": "Upper Body Strength",
+      "description": "Focus on chest, shoulders, and back with heavy compound movements.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week1_day2_lower",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 2,
+      "title": "Lower Body Power",
+      "description": "Build leg strength with squats, deadlifts, and accessory work.",
+      "estimatedDurationMinutes": 65,
+      "isRestDay": false
+    },
+    {
+      "id": "week1_day3_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 3,
+      "title": "Rest & Recovery",
+      "description": "Active recovery day. Light walk or stretching recommended.",
+      "estimatedDurationMinutes": 30,
+      "isRestDay": true
+    },
+    {
+      "id": "week1_day4_push",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 4,
+      "title": "Push Focus",
+      "description": "Chest, shoulders, and triceps hypertrophy work.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week1_day5_pull",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 5,
+      "title": "Pull Focus",
+      "description": "Back and biceps with emphasis on width and thickness.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week1_day6_legs",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 6,
+      "title": "Legs & Glutes",
+      "description": "Complete lower body development with volume focus.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week1_day7_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 7,
+      "title": "Rest Day",
+      "description": "Full rest. Allow your body to recover and grow.",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "week2_day8_upper",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 8,
+      "title": "Upper Body Strength",
+      "description": "Progressive overload - increase weight from Week 1.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week2_day9_lower",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 9,
+      "title": "Lower Body Power",
+      "description": "Increase intensity and volume from previous week.",
+      "estimatedDurationMinutes": 65,
+      "isRestDay": false
+    },
+    {
+      "id": "week2_day10_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 10,
+      "title": "Rest & Recovery",
+      "description": "Active recovery day. Light walk or stretching recommended.",
+      "estimatedDurationMinutes": 30,
+      "isRestDay": true
+    },
+    {
+      "id": "week2_day11_push",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 11,
+      "title": "Push Focus",
+      "description": "Chest, shoulders, and triceps hypertrophy work.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week2_day12_pull",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 12,
+      "title": "Pull Focus",
+      "description": "Back and biceps with emphasis on width and thickness.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week2_day13_legs",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 13,
+      "title": "Legs & Glutes",
+      "description": "Complete lower body development with volume focus.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week2_day14_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 14,
+      "title": "Rest Day",
+      "description": "Full rest. Allow your body to recover and grow.",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "week3_day15_upper",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 15,
+      "title": "Upper Body Strength",
+      "description": "Peak intensity week - push your limits.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week3_day16_lower",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 16,
+      "title": "Lower Body Power",
+      "description": "Maximum effort on compound movements.",
+      "estimatedDurationMinutes": 65,
+      "isRestDay": false
+    },
+    {
+      "id": "week3_day17_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 17,
+      "title": "Rest & Recovery",
+      "description": "Active recovery day. Light walk or stretching recommended.",
+      "estimatedDurationMinutes": 30,
+      "isRestDay": true
+    },
+    {
+      "id": "week3_day18_push",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 18,
+      "title": "Push Focus",
+      "description": "Chest, shoulders, and triceps hypertrophy work.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week3_day19_pull",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 19,
+      "title": "Pull Focus",
+      "description": "Back and biceps with emphasis on width and thickness.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week3_day20_legs",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 20,
+      "title": "Legs & Glutes",
+      "description": "Complete lower body development with volume focus.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week3_day21_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 21,
+      "title": "Rest Day",
+      "description": "Full rest. Allow your body to recover and grow.",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "week4_day22_upper",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 22,
+      "title": "Upper Body Strength",
+      "description": "Final week - test your new strength levels.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week4_day23_lower",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 23,
+      "title": "Lower Body Power",
+      "description": "Showcase your progress with personal records.",
+      "estimatedDurationMinutes": 65,
+      "isRestDay": false
+    },
+    {
+      "id": "week4_day24_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 24,
+      "title": "Rest & Recovery",
+      "description": "Active recovery day. Light walk or stretching recommended.",
+      "estimatedDurationMinutes": 30,
+      "isRestDay": true
+    },
+    {
+      "id": "week4_day25_push",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 25,
+      "title": "Push Focus",
+      "description": "Chest, shoulders, and triceps hypertrophy work.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week4_day26_pull",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 26,
+      "title": "Pull Focus",
+      "description": "Back and biceps with emphasis on width and thickness.",
+      "estimatedDurationMinutes": 55,
+      "isRestDay": false
+    },
+    {
+      "id": "week4_day27_legs",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 27,
+      "title": "Legs & Glutes",
+      "description": "Complete lower body development with volume focus.",
+      "estimatedDurationMinutes": 60,
+      "isRestDay": false
+    },
+    {
+      "id": "week4_day28_rest",
+      "programId": "prog_leangain_4week_01",
+      "dayNumber": 28,
+      "title": "Rest Day",
+      "description": "Congratulations! You've completed the 4-week program.",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ex_upper_bench_press",
+      "workoutDayId": "week1_day1_upper",
+      "name": "Barbell Bench Press",
+      "order": 1,
+      "equipment": "barbell",
+      "restSeconds": 180,
+      "targetMuscleGroups": ["chest", "arms"],
+      "sets": [
+        {"id": "ex_upper_bench_press_s1", "setNumber": 1, "targetReps": 5, "targetWeight": null},
+        {"id": "ex_upper_bench_press_s2", "setNumber": 2, "targetReps": 5, "targetWeight": null},
+        {"id": "ex_upper_bench_press_s3", "setNumber": 3, "targetReps": 5, "targetWeight": null},
+        {"id": "ex_upper_bench_press_s4", "setNumber": 4, "targetReps": 5, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_upper_overhead_press",
+      "workoutDayId": "week1_day1_upper",
+      "name": "Overhead Press",
+      "order": 2,
+      "equipment": "barbell",
+      "restSeconds": 120,
+      "targetMuscleGroups": ["shoulders", "arms"],
+      "sets": [
+        {"id": "ex_upper_overhead_press_s1", "setNumber": 1, "targetReps": 6, "targetWeight": null},
+        {"id": "ex_upper_overhead_press_s2", "setNumber": 2, "targetReps": 6, "targetWeight": null},
+        {"id": "ex_upper_overhead_press_s3", "setNumber": 3, "targetReps": 6, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_upper_bent_row",
+      "workoutDayId": "week1_day1_upper",
+      "name": "Bent-Over Barbell Row",
+      "order": 3,
+      "equipment": "barbell",
+      "restSeconds": 120,
+      "targetMuscleGroups": ["back", "arms"],
+      "sets": [
+        {"id": "ex_upper_bent_row_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_upper_bent_row_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_upper_bent_row_s3", "setNumber": 3, "targetReps": 8, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_upper_pullups",
+      "workoutDayId": "week1_day1_upper",
+      "name": "Pull-Ups",
+      "order": 4,
+      "equipment": "bodyweight",
+      "restSeconds": 90,
+      "targetMuscleGroups": ["back", "arms"],
+      "sets": [
+        {"id": "ex_upper_pullups_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_upper_pullups_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_upper_pullups_s3", "setNumber": 3, "targetReps": 8, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_lower_squat",
+      "workoutDayId": "week1_day2_lower",
+      "name": "Back Squat",
+      "order": 1,
+      "equipment": "barbell",
+      "restSeconds": 180,
+      "targetMuscleGroups": ["legs", "core"],
+      "sets": [
+        {"id": "ex_lower_squat_s1", "setNumber": 1, "targetReps": 5, "targetWeight": null},
+        {"id": "ex_lower_squat_s2", "setNumber": 2, "targetReps": 5, "targetWeight": null},
+        {"id": "ex_lower_squat_s3", "setNumber": 3, "targetReps": 5, "targetWeight": null},
+        {"id": "ex_lower_squat_s4", "setNumber": 4, "targetReps": 5, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_lower_deadlift",
+      "workoutDayId": "week1_day2_lower",
+      "name": "Romanian Deadlift",
+      "order": 2,
+      "equipment": "barbell",
+      "restSeconds": 180,
+      "targetMuscleGroups": ["legs", "back"],
+      "sets": [
+        {"id": "ex_lower_deadlift_s1", "setNumber": 1, "targetReps": 6, "targetWeight": null},
+        {"id": "ex_lower_deadlift_s2", "setNumber": 2, "targetReps": 6, "targetWeight": null},
+        {"id": "ex_lower_deadlift_s3", "setNumber": 3, "targetReps": 6, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_lower_leg_press",
+      "workoutDayId": "week1_day2_lower",
+      "name": "Leg Press",
+      "order": 3,
+      "equipment": "machine",
+      "restSeconds": 120,
+      "targetMuscleGroups": ["legs"],
+      "sets": [
+        {"id": "ex_lower_leg_press_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_lower_leg_press_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_lower_leg_press_s3", "setNumber": 3, "targetReps": 10, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_lower_leg_curl",
+      "workoutDayId": "week1_day2_lower",
+      "name": "Leg Curl",
+      "order": 4,
+      "equipment": "machine",
+      "restSeconds": 90,
+      "targetMuscleGroups": ["legs"],
+      "sets": [
+        {"id": "ex_lower_leg_curl_s1", "setNumber": 1, "targetReps": 12, "targetWeight": null},
+        {"id": "ex_lower_leg_curl_s2", "setNumber": 2, "targetReps": 12, "targetWeight": null},
+        {"id": "ex_lower_leg_curl_s3", "setNumber": 3, "targetReps": 12, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_push_incline_db",
+      "workoutDayId": "week1_day4_push",
+      "name": "Incline Dumbbell Press",
+      "order": 1,
+      "equipment": "dumbbell",
+      "restSeconds": 120,
+      "targetMuscleGroups": ["chest", "shoulders"],
+      "sets": [
+        {"id": "ex_push_incline_db_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_push_incline_db_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_push_incline_db_s3", "setNumber": 3, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_push_incline_db_s4", "setNumber": 4, "targetReps": 8, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_push_shoulder_press",
+      "workoutDayId": "week1_day4_push",
+      "name": "Dumbbell Shoulder Press",
+      "order": 2,
+      "equipment": "dumbbell",
+      "restSeconds": 90,
+      "targetMuscleGroups": ["shoulders", "arms"],
+      "sets": [
+        {"id": "ex_push_shoulder_press_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_push_shoulder_press_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_push_shoulder_press_s3", "setNumber": 3, "targetReps": 10, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_push_triceps",
+      "workoutDayId": "week1_day4_push",
+      "name": "Close-Grip Bench Press",
+      "order": 3,
+      "equipment": "barbell",
+      "restSeconds": 90,
+      "targetMuscleGroups": ["arms"],
+      "sets": [
+        {"id": "ex_push_triceps_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_push_triceps_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_push_triceps_s3", "setNumber": 3, "targetReps": 8, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_push_lateral_raise",
+      "workoutDayId": "week1_day4_push",
+      "name": "Lateral Raise",
+      "order": 4,
+      "equipment": "dumbbell",
+      "restSeconds": 60,
+      "targetMuscleGroups": ["shoulders"],
+      "sets": [
+        {"id": "ex_push_lateral_raise_s1", "setNumber": 1, "targetReps": 12, "targetWeight": null},
+        {"id": "ex_push_lateral_raise_s2", "setNumber": 2, "targetReps": 12, "targetWeight": null},
+        {"id": "ex_push_lateral_raise_s3", "setNumber": 3, "targetReps": 12, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_pull_pulldown",
+      "workoutDayId": "week1_day5_pull",
+      "name": "Wide-Grip Lat Pulldown",
+      "order": 1,
+      "equipment": "machine",
+      "restSeconds": 120,
+      "targetMuscleGroups": ["back"],
+      "sets": [
+        {"id": "ex_pull_pulldown_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_pull_pulldown_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_pull_pulldown_s3", "setNumber": 3, "targetReps": 8, "targetWeight": null},
+        {"id": "ex_pull_pulldown_s4", "setNumber": 4, "targetReps": 8, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_pull_cable_row",
+      "workoutDayId": "week1_day5_pull",
+      "name": "Seated Cable Row",
+      "order": 2,
+      "equipment": "machine",
+      "restSeconds": 90,
+      "targetMuscleGroups": ["back"],
+      "sets": [
+        {"id": "ex_pull_cable_row_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_pull_cable_row_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_pull_cable_row_s3", "setNumber": 3, "targetReps": 10, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_pull_face_pull",
+      "workoutDayId": "week1_day5_pull",
+      "name": "Face Pull",
+      "order": 3,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": ["shoulders", "back"],
+      "sets": [
+        {"id": "ex_pull_face_pull_s1", "setNumber": 1, "targetReps": 15, "targetWeight": null},
+        {"id": "ex_pull_face_pull_s2", "setNumber": 2, "targetReps": 15, "targetWeight": null},
+        {"id": "ex_pull_face_pull_s3", "setNumber": 3, "targetReps": 15, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_pull_barbell_curl",
+      "workoutDayId": "week1_day5_pull",
+      "name": "Barbell Biceps Curl",
+      "order": 4,
+      "equipment": "barbell",
+      "restSeconds": 60,
+      "targetMuscleGroups": ["arms"],
+      "sets": [
+        {"id": "ex_pull_barbell_curl_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_pull_barbell_curl_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_pull_barbell_curl_s3", "setNumber": 3, "targetReps": 10, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_legs_front_squat",
+      "workoutDayId": "week1_day6_legs",
+      "name": "Front Squat",
+      "order": 1,
+      "equipment": "barbell",
+      "restSeconds": 150,
+      "targetMuscleGroups": ["legs", "core"],
+      "sets": [
+        {"id": "ex_legs_front_squat_s1", "setNumber": 1, "targetReps": 6, "targetWeight": null},
+        {"id": "ex_legs_front_squat_s2", "setNumber": 2, "targetReps": 6, "targetWeight": null},
+        {"id": "ex_legs_front_squat_s3", "setNumber": 3, "targetReps": 6, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_legs_bulgarian_split",
+      "workoutDayId": "week1_day6_legs",
+      "name": "Bulgarian Split Squat",
+      "order": 2,
+      "equipment": "dumbbell",
+      "restSeconds": 90,
+      "targetMuscleGroups": ["legs"],
+      "sets": [
+        {"id": "ex_legs_bulgarian_split_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_legs_bulgarian_split_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
+        {"id": "ex_legs_bulgarian_split_s3", "setNumber": 3, "targetReps": 10, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_legs_leg_extension",
+      "workoutDayId": "week1_day6_legs",
+      "name": "Leg Extension",
+      "order": 3,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": ["legs"],
+      "sets": [
+        {"id": "ex_legs_leg_extension_s1", "setNumber": 1, "targetReps": 12, "targetWeight": null},
+        {"id": "ex_legs_leg_extension_s2", "setNumber": 2, "targetReps": 12, "targetWeight": null},
+        {"id": "ex_legs_leg_extension_s3", "setNumber": 3, "targetReps": 12, "targetWeight": null}
+      ]
+    },
+    {
+      "id": "ex_legs_calf_raise",
+      "workoutDayId": "week1_day6_legs",
+      "name": "Standing Calf Raise",
+      "order": 4,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": ["legs"],
+      "sets": [
+        {"id": "ex_legs_calf_raise_s1", "setNumber": 1, "targetReps": 15, "targetWeight": null},
+        {"id": "ex_legs_calf_raise_s2", "setNumber": 2, "targetReps": 15, "targetWeight": null},
+        {"id": "ex_legs_calf_raise_s3", "setNumber": 3, "targetReps": 15, "targetWeight": null}
+      ]
+    }
+  ]
+}
