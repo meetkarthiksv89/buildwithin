@@ -55,13 +55,26 @@ struct DayRow: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 16)
-            .background(Color.appCardBackground)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.appPrimaryGreen.opacity(0.15),
+                        Color.appCardBackground
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
             .overlay(
                 Rectangle()
                     .fill(Color.appPrimaryGreen)
                     .frame(width: 4)
                     .padding(.vertical, 12),
                 alignment: .leading
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.appPrimaryGreen.opacity(0.2), lineWidth: 1)
             )
             .cornerRadius(12)
         } else {
@@ -80,7 +93,20 @@ struct DayRow: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 14)
-            .background(workoutDay.isRestDay ? Color.appCardBackground.opacity(0.5) : Color.appCardBackground)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        workoutDay.isRestDay ? Color.appPrimaryGreen.opacity(0.075) : Color.appPrimaryGreen.opacity(0.15),
+                        workoutDay.isRestDay ? Color.appCardBackground.opacity(0.5) : Color.appCardBackground
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.appPrimaryGreen.opacity(workoutDay.isRestDay ? 0.1 : 0.2), lineWidth: 1)
+            )
             .cornerRadius(12)
             .opacity(workoutDay.isRestDay ? 0.6 : 1.0)
         }

@@ -10,6 +10,7 @@ import SwiftData
 
 struct MainTabView: View {
     @StateObject private var repository = ProgramRepository()
+    @StateObject private var nutritionRepository = NutritionRepository()
     @StateObject private var navigationState = NavigationState()
     @Environment(\.modelContext) private var modelContext
     
@@ -24,7 +25,7 @@ struct MainTabView: View {
                     Label("Training", systemImage: "dumbbell.fill")
                 }
             
-            NutritionView()
+            NutritionView(repository: nutritionRepository)
                 .tabItem {
                     Label("Nutrition", systemImage: "fork.knife")
                 }

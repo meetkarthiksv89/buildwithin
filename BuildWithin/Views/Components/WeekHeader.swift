@@ -37,7 +37,20 @@ struct WeekHeader: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 12)
-            .background(Color.appCardBackground)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        Color.appPrimaryGreen.opacity(0.15),
+                        Color.appCardBackground
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+            .overlay(
+                Rectangle()
+                    .stroke(Color.appPrimaryGreen.opacity(0.2), lineWidth: 1)
+            )
         }
         .buttonStyle(PlainButtonStyle())
     }

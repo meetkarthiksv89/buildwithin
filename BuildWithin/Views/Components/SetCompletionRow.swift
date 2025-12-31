@@ -149,13 +149,20 @@ struct SetCompletionRow: View {
         }
         .padding(16)
         .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.appCardBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(isCompleted ? Color.appPrimaryGreen.opacity(0.3) : Color.clear, lineWidth: 1.5)
-                )
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.appPrimaryGreen.opacity(0.15),
+                    Color.appCardBackground
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
         )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(isCompleted ? Color.appPrimaryGreen.opacity(0.3) : Color.appPrimaryGreen.opacity(0.2), lineWidth: 1.5)
+        )
+        .cornerRadius(12)
         .opacity(isCompleted ? 1.0 : 0.95)
     }
 }

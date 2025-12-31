@@ -70,7 +70,20 @@ struct WorkoutSessionRow: View {
                 .font(.system(size: 14))
         }
         .padding()
-        .background(Color.appCardBackground)
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color.appPrimaryGreen.opacity(0.15),
+                    Color.appCardBackground
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.appPrimaryGreen.opacity(0.2), lineWidth: 1)
+        )
         .cornerRadius(16)
     }
     

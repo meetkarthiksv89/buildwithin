@@ -1,0 +1,477 @@
+{
+  "nutritionPlan": {
+    "id": "nutr_fatloss_01",
+    "title": "Fat Loss Meal Plan",
+    "subtitle": "High Protein • Balanced Macros",
+    "description": "A comprehensive meal plan designed for fat loss while maintaining muscle mass. Includes pre-workout nutrition, balanced meals throughout the day, and optimal macronutrient distribution.",
+    "coverImageURL": "fatloss_meal_cover.jpg",
+    "isActive": true
+  },
+  "dailyTarget": {
+    "totalCalories": 1591,
+    "macros": {
+      "carbs": 174,
+      "fat": 47,
+      "protein": 120
+    }
+  },
+  "meals": [
+    {
+      "id": "meal_morning_preworkout_01",
+      "mealType": "morning_pre_workout",
+      "name": "Fruit of Choice",
+      "isDefault": true,
+      "macros": {
+        "carbs": 28,
+        "fat": 0,
+        "protein": 0
+      },
+      "calories": 112,
+      "imageURL": null
+    },
+    {
+      "id": "meal_breakfast_01",
+      "mealType": "breakfast",
+      "name": "Idli + Whey Protein",
+      "isDefault": true,
+      "macros": {
+        "carbs": 37,
+        "fat": 6,
+        "protein": 32
+      },
+      "calories": 326,
+      "imageURL": "idli_whey.jpg"
+    },
+    {
+      "id": "meal_breakfast_02",
+      "mealType": "breakfast",
+      "name": "Dosa",
+      "isDefault": false,
+      "macros": {
+        "carbs": 40,
+        "fat": 8,
+        "protein": 8
+      },
+      "calories": 280,
+      "imageURL": null
+    },
+    {
+      "id": "meal_breakfast_03",
+      "mealType": "breakfast",
+      "name": "Poha",
+      "isDefault": false,
+      "macros": {
+        "carbs": 35,
+        "fat": 5,
+        "protein": 6
+      },
+      "calories": 250,
+      "imageURL": null
+    },
+    {
+      "id": "meal_lunch_01",
+      "mealType": "lunch",
+      "name": "Paneer + Rice/Roti + Greek Yogurt",
+      "isDefault": true,
+      "macros": {
+        "carbs": 66,
+        "fat": 18,
+        "protein": 35
+      },
+      "calories": 562,
+      "imageURL": null
+    },
+    {
+      "id": "meal_lunch_02",
+      "mealType": "lunch",
+      "name": "Chicken Meal",
+      "isDefault": false,
+      "macros": {
+        "carbs": 45,
+        "fat": 15,
+        "protein": 45
+      },
+      "calories": 505,
+      "imageURL": null
+    },
+    {
+      "id": "meal_dinner_01",
+      "mealType": "dinner",
+      "name": "Chicken/Vegetables + Quinoa",
+      "isDefault": true,
+      "macros": {
+        "carbs": 43,
+        "fat": 23,
+        "protein": 53
+      },
+      "calories": 591,
+      "imageURL": null
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "ing_sooji_01",
+      "mealId": "meal_breakfast_01",
+      "name": "Sooji",
+      "description": null,
+      "quantity": "40 g",
+      "macros": {
+        "carbs": 32,
+        "fat": 0.7,
+        "protein": 5.3
+      },
+      "calories": 155
+    },
+    {
+      "id": "ing_veggies_01",
+      "mealId": "meal_breakfast_01",
+      "name": "Veggies",
+      "description": "Onion, Tomatoes, Green Pepper",
+      "quantity": "50 g",
+      "macros": {
+        "carbs": 4.5,
+        "fat": 0,
+        "protein": 0
+      },
+      "calories": 18
+    },
+    {
+      "id": "ing_ghee_01",
+      "mealId": "meal_breakfast_01",
+      "name": "Ghee",
+      "description": null,
+      "quantity": "5 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 5,
+        "protein": 0
+      },
+      "calories": 45
+    },
+    {
+      "id": "ing_whey_protein_01",
+      "mealId": "meal_breakfast_01",
+      "name": "Whey Protein",
+      "description": "Isolate Powder",
+      "quantity": "1 scoop",
+      "macros": {
+        "carbs": 0,
+        "fat": 0,
+        "protein": 27
+      },
+      "calories": 108
+    },
+    {
+      "id": "ing_paneer_01",
+      "mealId": "meal_lunch_01",
+      "name": "Paneer",
+      "description": null,
+      "quantity": "150 g",
+      "macros": {
+        "carbs": 6,
+        "fat": 12,
+        "protein": 25
+      },
+      "calories": 265
+    },
+    {
+      "id": "ing_rice_01",
+      "mealId": "meal_lunch_01",
+      "name": "Rice",
+      "description": "Cooked",
+      "quantity": "100 g",
+      "macros": {
+        "carbs": 28,
+        "fat": 0.3,
+        "protein": 2.7
+      },
+      "calories": 130
+    },
+    {
+      "id": "ing_greek_yogurt_01",
+      "mealId": "meal_lunch_01",
+      "name": "Greek Yogurt",
+      "description": null,
+      "quantity": "100 g",
+      "macros": {
+        "carbs": 4,
+        "fat": 5,
+        "protein": 10
+      },
+      "calories": 97
+    },
+    {
+      "id": "ing_vegetables_lunch_01",
+      "mealId": "meal_lunch_01",
+      "name": "Mixed Vegetables",
+      "description": "Bell peppers, onions, tomatoes",
+      "quantity": "80 g",
+      "macros": {
+        "carbs": 8,
+        "fat": 0.2,
+        "protein": 1.5
+      },
+      "calories": 40
+    },
+    {
+      "id": "ing_oil_lunch_01",
+      "mealId": "meal_lunch_01",
+      "name": "Cooking Oil",
+      "description": null,
+      "quantity": "5 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 5,
+        "protein": 0
+      },
+      "calories": 45
+    },
+    {
+      "id": "ing_chicken_01",
+      "mealId": "meal_dinner_01",
+      "name": "Chicken Breast",
+      "description": "Cooked, skinless",
+      "quantity": "150 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 6,
+        "protein": 46
+      },
+      "calories": 248
+    },
+    {
+      "id": "ing_quinoa_01",
+      "mealId": "meal_dinner_01",
+      "name": "Quinoa",
+      "description": "Cooked",
+      "quantity": "100 g",
+      "macros": {
+        "carbs": 22,
+        "fat": 2,
+        "protein": 4
+      },
+      "calories": 120
+    },
+    {
+      "id": "ing_vegetables_dinner_01",
+      "mealId": "meal_dinner_01",
+      "name": "Mixed Vegetables",
+      "description": "Broccoli, carrots, bell peppers",
+      "quantity": "150 g",
+      "macros": {
+        "carbs": 12,
+        "fat": 0.5,
+        "protein": 3
+      },
+      "calories": 63
+    },
+    {
+      "id": "ing_oil_dinner_01",
+      "mealId": "meal_dinner_01",
+      "name": "Olive Oil",
+      "description": null,
+      "quantity": "15 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 15,
+        "protein": 0
+      },
+      "calories": 135
+    },
+    {
+      "id": "ing_spices_dinner_01",
+      "mealId": "meal_dinner_01",
+      "name": "Spices & Seasonings",
+      "description": "Turmeric, cumin, salt, pepper",
+      "quantity": "5 g",
+      "macros": {
+        "carbs": 1,
+        "fat": 0.1,
+        "protein": 0.2
+      },
+      "calories": 5
+    },
+    {
+      "id": "ing_fruit_01",
+      "mealId": "meal_morning_preworkout_01",
+      "name": "Banana",
+      "description": "Medium size",
+      "quantity": "1 piece",
+      "macros": {
+        "carbs": 27,
+        "fat": 0.4,
+        "protein": 1.3
+      },
+      "calories": 105
+    },
+    {
+      "id": "ing_apple_01",
+      "mealId": "meal_morning_preworkout_01",
+      "name": "Apple",
+      "description": "Alternative option",
+      "quantity": "1 medium",
+      "macros": {
+        "carbs": 25,
+        "fat": 0.3,
+        "protein": 0.5
+      },
+      "calories": 95
+    },
+    {
+      "id": "ing_dosa_batter_01",
+      "mealId": "meal_breakfast_02",
+      "name": "Dosa Batter",
+      "description": null,
+      "quantity": "100 g",
+      "macros": {
+        "carbs": 35,
+        "fat": 2,
+        "protein": 5
+      },
+      "calories": 180
+    },
+    {
+      "id": "ing_oil_dosa_01",
+      "mealId": "meal_breakfast_02",
+      "name": "Cooking Oil",
+      "description": null,
+      "quantity": "10 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 10,
+        "protein": 0
+      },
+      "calories": 90
+    },
+    {
+      "id": "ing_chutney_dosa_01",
+      "mealId": "meal_breakfast_02",
+      "name": "Coconut Chutney",
+      "description": null,
+      "quantity": "30 g",
+      "macros": {
+        "carbs": 3,
+        "fat": 2,
+        "protein": 1
+      },
+      "calories": 40
+    },
+    {
+      "id": "ing_poha_01",
+      "mealId": "meal_breakfast_03",
+      "name": "Poha",
+      "description": "Flattened rice",
+      "quantity": "50 g",
+      "macros": {
+        "carbs": 30,
+        "fat": 0.5,
+        "protein": 4
+      },
+      "calories": 140
+    },
+    {
+      "id": "ing_onion_poha_01",
+      "mealId": "meal_breakfast_03",
+      "name": "Onion",
+      "description": null,
+      "quantity": "30 g",
+      "macros": {
+        "carbs": 3,
+        "fat": 0,
+        "protein": 0.5
+      },
+      "calories": 12
+    },
+    {
+      "id": "ing_peanuts_poha_01",
+      "mealId": "meal_breakfast_03",
+      "name": "Peanuts",
+      "description": null,
+      "quantity": "15 g",
+      "macros": {
+        "carbs": 2,
+        "fat": 4.5,
+        "protein": 3.5
+      },
+      "calories": 85
+    },
+    {
+      "id": "ing_oil_poha_01",
+      "mealId": "meal_breakfast_03",
+      "name": "Cooking Oil",
+      "description": null,
+      "quantity": "5 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 5,
+        "protein": 0
+      },
+      "calories": 45
+    },
+    {
+      "id": "ing_chicken_lunch_01",
+      "mealId": "meal_lunch_02",
+      "name": "Chicken Breast",
+      "description": "Cooked, skinless",
+      "quantity": "150 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 6,
+        "protein": 46
+      },
+      "calories": 248
+    },
+    {
+      "id": "ing_rice_lunch_chicken_01",
+      "mealId": "meal_lunch_02",
+      "name": "Rice",
+      "description": "Cooked",
+      "quantity": "120 g",
+      "macros": {
+        "carbs": 33,
+        "fat": 0.4,
+        "protein": 3.2
+      },
+      "calories": 156
+    },
+    {
+      "id": "ing_vegetables_lunch_chicken_01",
+      "mealId": "meal_lunch_02",
+      "name": "Mixed Vegetables",
+      "description": "Bell peppers, onions, tomatoes",
+      "quantity": "100 g",
+      "macros": {
+        "carbs": 10,
+        "fat": 0.3,
+        "protein": 2
+      },
+      "calories": 50
+    },
+    {
+      "id": "ing_oil_lunch_chicken_01",
+      "mealId": "meal_lunch_02",
+      "name": "Cooking Oil",
+      "description": null,
+      "quantity": "10 g",
+      "macros": {
+        "carbs": 0,
+        "fat": 10,
+        "protein": 0
+      },
+      "calories": 90
+    },
+    {
+      "id": "ing_spices_lunch_chicken_01",
+      "mealId": "meal_lunch_02",
+      "name": "Spices & Seasonings",
+      "description": "Turmeric, cumin, salt, pepper",
+      "quantity": "5 g",
+      "macros": {
+        "carbs": 1,
+        "fat": 0.1,
+        "protein": 0.2
+      },
+      "calories": 5
+    }
+  ]
+}

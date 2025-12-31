@@ -1,14 +1,14 @@
 //
-//  ProgramCard.swift
+//  NutritionPlanCard.swift
 //  BuildWithin
 //
-//  Created by Karthik Venkatesh on 12/27/25.
+//  Created by Karthik Venkatesh on 12/31/25.
 //
 
 import SwiftUI
 
-struct ProgramCard: View {
-    let program: Program
+struct NutritionPlanCard: View {
+    let nutritionPlan: NutritionPlan
     
     var body: some View {
         HStack(spacing: 16) {
@@ -17,19 +17,21 @@ struct ProgramCard: View {
                 .fill(Color.appCardBackground)
                 .frame(width: 80, height: 80)
                 .overlay {
-                    Image(systemName: "figure.strengthtraining.traditional")
+                    Image(systemName: "fork.knife")
                         .foregroundColor(.appTextSecondary)
                         .font(.system(size: 32))
                 }
             
             VStack(alignment: .leading, spacing: 4) {
-                Text(program.title)
+                Text(nutritionPlan.title)
                     .font(.headline)
                     .foregroundColor(.appTextPrimary)
                 
-                Text(program.subtitle)
-                    .font(.subheadline)
-                    .foregroundColor(.appLightGreen)
+                if let subtitle = nutritionPlan.subtitle {
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundColor(.appLightGreen)
+                }
             }
             
             Spacer()
@@ -54,14 +56,12 @@ struct ProgramCard: View {
 }
 
 #Preview {
-    ProgramCard(program: Program(
+    NutritionPlanCard(nutritionPlan: NutritionPlan(
         id: "test",
-        title: "Fat Loss 4-Day Split",
-        subtitle: "Push • Pull • Legs • Full Body",
+        title: "Fat Loss Meal Plan",
+        subtitle: "High Protein • Balanced Macros",
         description: nil,
-        category: .strength,
-        coverImageURL: "",
-        totalDays: 4,
+        coverImageURL: nil,
         isActive: true
     ))
     .background(Color.appBackground)

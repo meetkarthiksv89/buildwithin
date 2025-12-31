@@ -32,4 +32,9 @@ extension Color {
     
     // Nav bar background: #000000 (black)
     static let appNavBarBackground = Color.black // #000000
+    
+    // Macronutrient colors
+    static let macroCarbs = Color.blue
+    static let macroFat = Color(red: 0.0, green: 0.8, blue: 0.8) // Teal/cyan
+    static let macroProtein = Color.purple
 }

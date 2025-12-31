@@ -8,32 +8,78 @@
 import SwiftUI
 
 struct NutritionView: View {
+    @StateObject private var viewModel: NutritionViewModel
+    
+    init(repository: NutritionRepository) {
+        _viewModel = StateObject(wrappedValue: NutritionViewModel(repository: repository))
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.appBackground
                     .ignoresSafeArea()
                 
-                VStack(spacing: 16) {
-                    Image(systemName: "fork.knife")
-                        .font(.system(size: 64))
-                        .foregroundColor(.appTextSecondary)
-                    
-                    Text("Nutrition")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.appTextPrimary)
-                    
-                    Text("Coming soon...")
-                        .font(.subheadline)
-                        .foregroundColor(.appTextSecondary)
+                if viewModel.isLoading {
+                    VStack(spacing: 16) {
+                        ProgressView()
+                            .tint(.appPrimaryGreen)
+                        Text("Loading nutrition plans...")
+                            .foregroundColor(.appTextSecondary)
+                    }
+                } else if let errorMessage = viewModel.errorMessage {
+                    VStack(spacing: 16) {
+                        Image(systemName: "exclamationmark.triangle")
+                            .font(.system(size: 48))
+                            .foregroundColor(.appTextSecondary)
+                        Text("Error loading nutrition plans")
+                            .font(.headline)
+                            .foregroundColor(.appTextPrimary)
+                        Text(errorMessage)
+                            .font(.subheadline)
+                            .foregroundColor(.appTextSecondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal)
+                    }
+                } else {
+                    VStack(spacing: 0) {
+                        // Header
+                        HStack {
+                            Text("Nutrition")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(.appTextPrimary)
+                            
+                            Spacer()
+                        }
+                        .padding()
+                        
+                        // Nutrition plans list
+                        ScrollView {
+                            VStack(spacing: 16) {
+                                ForEach(viewModel.nutritionPlans) { planContent in
+                                    NavigationLink(destination: MealsView(
+                                        nutritionPlan: planContent
+                                    )) {
+                                        NutritionPlanCard(nutritionPlan: planContent.nutritionPlan)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                }
+                                .padding(.horizontal)
+                            }
+                            .padding(.vertical)
+                        }
+                    }
                 }
             }
-            .navigationTitle("Nutrition")
+            .task {
+                await viewModel.loadNutritionPlans()
+            }
         }
     }
 }
 
 #Preview {
-    NutritionView()
+    NutritionView(repository: NutritionRepository())
+        .environmentObject(NavigationState())
 }
