@@ -166,6 +166,45 @@ class ActiveWorkoutViewModel: ObservableObject {
         currentExerciseIndex -= 1
     }
     
+    func addSetToCurrentExercise() {
+        guard let currentExercise = currentExercise else { return }
+        
+        // Calculate next set number
+        let nextSetNumber: Int
+        if let lastSet = currentExercise.sets.last {
+            nextSetNumber = lastSet.setNumber + 1
+        } else {
+            nextSetNumber = 1
+        }
+        
+        // Copy targetReps and targetWeight from last set, or use nil if no sets exist
+        let targetReps = currentExercise.sets.last?.targetReps
+        let targetWeight = currentExercise.sets.last?.targetWeight
+        
+        // Create new set with unique ID
+        let newSet = ExerciseSet(
+            id: UUID().uuidString,
+            setNumber: nextSetNumber,
+            targetReps: targetReps,
+            targetWeight: targetWeight
+        )
+        
+        // Create new exercise with updated sets array
+        let updatedExercise = Exercise(
+            id: currentExercise.id,
+            workoutDayId: currentExercise.workoutDayId,
+            name: currentExercise.name,
+            order: currentExercise.order,
+            equipment: currentExercise.equipment,
+            restSeconds: currentExercise.restSeconds,
+            targetMuscleGroups: currentExercise.targetMuscleGroups,
+            sets: currentExercise.sets + [newSet]
+        )
+        
+        // Replace exercise in array
+        exercises[currentExerciseIndex] = updatedExercise
+    }
+    
     func finishWorkout() throws {
         guard let sessionId = workoutSessionId else {
             throw NSError(domain: "ActiveWorkoutViewModel", code: 1, userInfo: [NSLocalizedDescriptionKey: "No workout session found"])

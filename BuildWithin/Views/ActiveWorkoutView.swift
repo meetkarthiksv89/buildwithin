@@ -163,7 +163,9 @@ struct ActiveWorkoutView: View {
                                     .padding(.horizontal)
                                 }
                                 
-                                Button(action: {}) {
+                                Button(action: {
+                                    viewModel.addSetToCurrentExercise()
+                                }) {
                                     HStack {
                                         Image(systemName: "plus")
                                             .foregroundColor(.appPrimaryGreen)
