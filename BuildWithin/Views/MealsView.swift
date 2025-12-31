@@ -29,6 +29,20 @@ struct MealsView: View {
         return order.compactMap { activeMeals[$0] }
     }
     
+    // Calculate daily target from selected meals
+    private var calculatedDailyTarget: DailyTarget {
+        let totals = activeMeals.values.reduce((calories: 0.0, carbs: 0.0, fat: 0.0, protein: 0.0)) { acc, meal in
+            (acc.calories + meal.calories,
+             acc.carbs + meal.macros.carbs,
+             acc.fat + meal.macros.fat,
+             acc.protein + meal.macros.protein)
+        }
+        return DailyTarget(
+            totalCalories: totals.calories,
+            macros: Macronutrients(carbs: totals.carbs, fat: totals.fat, protein: totals.protein)
+        )
+    }
+    
     // Handle meal selection from picker
     private func handleMealSelection(_ meal: Meal) {
         activeMeals[meal.mealType] = meal
@@ -50,7 +64,7 @@ struct MealsView: View {
                     
                     if selectedMode == .mealPlans {
                         // Daily Target Card
-                        DailyTargetCard(dailyTarget: nutritionPlan.dailyTarget)
+                        DailyTargetCard(dailyTarget: calculatedDailyTarget)
                             .padding(.horizontal)
                         
                         // Meals List
