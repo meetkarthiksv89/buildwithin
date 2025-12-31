@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ActiveWorkoutView: View {
     let exercises: [Exercise]
@@ -24,6 +25,7 @@ struct ActiveWorkoutView: View {
     @State private var showingFinishAlert = false
     @State private var showCompletionView = false
     @State private var showingCloseAlert = false
+    @State private var isKeyboardVisible = false
     
     init(exercises: [Exercise], programId: String, workoutDayId: String, programName: String, workoutDayName: String, allPrograms: [ProgramContent], progressStore: ProgressStoreProtocol) {
         self.exercises = exercises
@@ -179,65 +181,68 @@ struct ActiveWorkoutView: View {
                         }
                         .padding(.vertical)
                     }
+                    .scrollDismissesKeyboard(.interactively)
                     
                     // Bottom navigation
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            viewModel.previousExercise()
-                        }) {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.appTextPrimary)
-//                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.appCardBackground)
-                                .cornerRadius(12)
-                        }
-                        .disabled(!viewModel.canGoToPrevious)
-                        .opacity(viewModel.canGoToPrevious ? 1.0 : 0.5)
-                        
-                        if viewModel.isLastExercise {
+                    if !isKeyboardVisible {
+                        HStack(spacing: 16) {
                             Button(action: {
-                                showingFinishAlert = true
+                                viewModel.previousExercise()
                             }) {
-                                Text("Finish Workout")
-                                    .font(.headline)
-                                    .foregroundColor(.black)
+                                Image(systemName: "chevron.left")
+                                    .foregroundColor(.appTextPrimary)
+//                                .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.appCardBackground)
+                                    .cornerRadius(12)
+                            }
+                            .disabled(!viewModel.canGoToPrevious)
+                            .opacity(viewModel.canGoToPrevious ? 1.0 : 0.5)
+                            
+                            if viewModel.isLastExercise {
+                                Button(action: {
+                                    showingFinishAlert = true
+                                }) {
+                                    Text("Finish Workout")
+                                        .font(.headline)
+                                        .foregroundColor(.black)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.appPrimaryGreen)
+                                        .cornerRadius(12)
+                                }
+                            } else {
+                                Button(action: {
+                                    viewModel.nextExercise()
+                                }) {
+                                    ZStack {
+                                        if let nextExercise = nextExercise {
+                                            Text(nextExercise.name)
+                                                .font(.headline)
+                                                .foregroundColor(.black)
+                                        } else {
+                                            Text("Next")
+                                                .font(.headline)
+                                                .foregroundColor(.black)
+                                        }
+                                        
+                                        HStack {
+                                            Spacer()
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(.black)
+                                                .font(.system(size: 14))
+                                                .padding(.trailing)
+                                        }
+                                    }
                                     .frame(maxWidth: .infinity)
                                     .padding()
                                     .background(Color.appPrimaryGreen)
                                     .cornerRadius(12)
-                            }
-                        } else {
-                            Button(action: {
-                                viewModel.nextExercise()
-                            }) {
-                                ZStack {
-                                    if let nextExercise = nextExercise {
-                                        Text(nextExercise.name)
-                                            .font(.headline)
-                                            .foregroundColor(.black)
-                                    } else {
-                                        Text("Next")
-                                            .font(.headline)
-                                            .foregroundColor(.black)
-                                    }
-                                    
-                                    HStack {
-                                        Spacer()
-                                        Image(systemName: "chevron.right")
-                                            .foregroundColor(.black)
-                                            .font(.system(size: 14))
-                                            .padding(.trailing)
-                                    }
                                 }
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.appPrimaryGreen)
-                                .cornerRadius(12)
                             }
                         }
+                        .padding()
                     }
-                    .padding()
                 }
             }
         }
@@ -246,6 +251,12 @@ struct ActiveWorkoutView: View {
         }
         .onDisappear {
             stopTimer()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+            isKeyboardVisible = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+            isKeyboardVisible = false
         }
         .alert("Finish Workout?", isPresented: $showingFinishAlert) {
             Button("Cancel", role: .cancel) {}
