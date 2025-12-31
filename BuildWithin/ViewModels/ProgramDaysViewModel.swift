@@ -28,21 +28,6 @@ class ProgramDaysViewModel: ObservableObject {
     
     private func loadDays() {
         days = repository.days(for: program.id, in: allPrograms)
-        groupDaysByWeek()
-    }
-    
-    private func groupDaysByWeek() {
-        let grouped = Dictionary(grouping: days) { day -> Int in
-            weekNumber(for: day.dayNumber)
-        }
-        
-        weeks = grouped.map { weekNumber, days in
-            Week(weekNumber: weekNumber, days: days.sorted { $0.dayNumber < $1.dayNumber })
-        }.sorted { $0.weekNumber < $1.weekNumber }
-    }
-    
-    private func weekNumber(for dayNumber: Int) -> Int {
-        return ((dayNumber - 1) / 7) + 1
     }
     
     func isDayCompleted(_ workoutDay: WorkoutDay) -> Bool {

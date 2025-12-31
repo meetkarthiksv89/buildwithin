@@ -111,4 +111,9 @@ class ProgressStore: ProgressStoreProtocol {
     func getWorkoutSessions(programId: String, workoutDayId: String) -> [WorkoutSession] {
         return []
     }
+    
+    func getAllSetLogsForExercise(exerciseId: String) -> [SetLog] {
+        // UserDefaults implementation doesn't support SetLog
+        return []
+    }
 }

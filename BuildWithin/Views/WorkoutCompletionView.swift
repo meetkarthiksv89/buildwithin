@@ -172,7 +172,8 @@ struct WorkoutCompletionView: View {
                 session: session,
                 programName: programName,
                 workoutDayName: workoutDayName,
-                allPrograms: allPrograms
+                allPrograms: allPrograms,
+                progressStore: progressStore
             )
         } else {
             // Fallback view if session not found

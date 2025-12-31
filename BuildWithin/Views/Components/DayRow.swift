@@ -17,7 +17,7 @@ struct DayRow: View {
             // Highlighted "TODAY" row (only for workout days)
             HStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("TODAY")
+                    Text("DAY")
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.appPrimaryGreen)
@@ -51,15 +51,6 @@ struct DayRow: View {
                 }
                 
                 Spacer()
-                
-                Circle()
-                    .fill(Color.appPrimaryGreen)
-                    .frame(width: 44, height: 44)
-                    .overlay {
-                        Image(systemName: "play.fill")
-                            .foregroundColor(.black)
-                            .font(.system(size: 16))
-                    }
             }
             .padding()
             .background(Color.appCardBackground)
@@ -76,31 +67,19 @@ struct DayRow: View {
             HStack {
                 Text("DAY \(String(format: "%02d", workoutDay.dayNumber))")
                     .font(.caption)
-                    .foregroundColor(.appTextSecondary)
+                    .foregroundColor(workoutDay.isRestDay ? .appTextSecondary.opacity(0.7) : .appTextSecondary)
                     .frame(width: 80, alignment: .leading)
                 
                 Text(workoutDay.title)
                     .font(.body)
-                    .foregroundColor(.appTextPrimary)
+                    .foregroundColor(workoutDay.isRestDay ? .appTextPrimary.opacity(0.5) : .appTextPrimary)
                 
                 Spacer()
-                
-                if isCompleted {
-                    Circle()
-                        .fill(Color.appPrimaryGreen)
-                        .frame(width: 24, height: 24)
-                        .overlay {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.black)
-                                .font(.system(size: 12))
-                        }
-                } else {
-                    Circle()
-                        .stroke(Color.appInactiveGray, lineWidth: 2)
-                        .frame(width: 24, height: 24)
-                }
             }
-            .padding(.vertical, 8)
+            .padding()
+            .background(workoutDay.isRestDay ? Color.appCardBackground.opacity(0.5) : Color.appCardBackground)
+            .cornerRadius(12)
+            .opacity(workoutDay.isRestDay ? 0.6 : 1.0)
         }
     }
 }

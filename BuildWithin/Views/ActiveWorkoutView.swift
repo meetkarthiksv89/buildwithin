@@ -191,7 +191,6 @@ struct ActiveWorkoutView: View {
                             }) {
                                 Image(systemName: "chevron.left")
                                     .foregroundColor(.appTextPrimary)
-//                                .frame(maxWidth: .infinity)
                                     .padding()
                                     .background(Color.appCardBackground)
                                     .cornerRadius(12)

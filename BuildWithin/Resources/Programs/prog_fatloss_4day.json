@@ -71,69 +71,6 @@
       "description": "Rest day",
       "estimatedDurationMinutes": 0,
       "isRestDay": true
-    },
-    {
-      "id": "day_push_08",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 8,
-      "title": "Push",
-      "description": "Chest, shoulders, triceps + short core finisher.",
-      "estimatedDurationMinutes": 45,
-      "isRestDay": false
-    },
-    {
-      "id": "day_pull_09",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 9,
-      "title": "Pull",
-      "description": "Back, biceps + conditioning finisher.",
-      "estimatedDurationMinutes": 45,
-      "isRestDay": false
-    },
-    {
-      "id": "day_rest_10",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 10,
-      "title": "Rest",
-      "description": "Rest day",
-      "estimatedDurationMinutes": 0,
-      "isRestDay": true
-    },
-    {
-      "id": "day_legs_11",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 11,
-      "title": "Legs",
-      "description": "Lower body strength + core.",
-      "estimatedDurationMinutes": 50,
-      "isRestDay": false
-    },
-    {
-      "id": "day_full_12",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 12,
-      "title": "Full Body",
-      "description": "Full-body compounds + metabolic finisher.",
-      "estimatedDurationMinutes": 50,
-      "isRestDay": false
-    },
-    {
-      "id": "day_rest_13",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 13,
-      "title": "Rest",
-      "description": "Rest day",
-      "estimatedDurationMinutes": 0,
-      "isRestDay": true
-    },
-    {
-      "id": "day_rest_14",
-      "programId": "prog_fatloss_4day_01",
-      "dayNumber": 14,
-      "title": "Rest",
-      "description": "Rest day",
-      "estimatedDurationMinutes": 0,
-      "isRestDay": true
     }
   ],
   "exercises": [

@@ -27,4 +27,5 @@ protocol ProgressStoreProtocol {
     // History methods
     func getAllWorkoutSessions() -> [WorkoutSession]
     func getWorkoutSessions(programId: String, workoutDayId: String) -> [WorkoutSession]
+    func getAllSetLogsForExercise(exerciseId: String) -> [SetLog]
 }

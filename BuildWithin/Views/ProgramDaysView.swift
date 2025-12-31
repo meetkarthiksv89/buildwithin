@@ -14,7 +14,6 @@ struct ProgramDaysView: View {
     let allPrograms: [ProgramContent]
     
     @StateObject private var viewModel: ProgramDaysViewModel
-    @State private var expandedWeeks: Set<Int> = []
     
     init(program: Program, repository: ProgramRepository, progressStore: ProgressStoreProtocol, allPrograms: [ProgramContent]) {
         self.program = program
@@ -35,77 +34,36 @@ struct ProgramDaysView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(viewModel.weeks) { week in
-                        VStack(spacing: 0) {
-                            // Week header
-                            WeekHeader(
-                                week: week,
-                                completedDaysCount: week.completedDaysCount(using: { viewModel.isDayCompleted($0) }),
-                                isExpanded: Binding(
-                                    get: { expandedWeeks.contains(week.weekNumber) },
-                                    set: { isExpanded in
-                                        if isExpanded {
-                                            expandedWeeks.insert(week.weekNumber)
-                                        } else {
-                                            expandedWeeks.remove(week.weekNumber)
-                                        }
-                                    }
-                                )
+                VStack(spacing: 16) {
+                    ForEach(viewModel.days) { day in
+                        if day.isRestDay {
+                            // Rest days are not tappable
+                            DayRow(
+                                workoutDay: day,
+                                isCompleted: viewModel.isDayCompleted(day),
+                                isToday: isToday(day)
                             )
-                            
-                            // Days in this week (conditionally shown)
-                            if expandedWeeks.contains(week.weekNumber) {
-                                VStack(spacing: 16) {
-                                    ForEach(week.days) { day in
-                                        if day.isRestDay {
-                                            // Rest days are not tappable
-                                            DayRow(
-                                                workoutDay: day,
-                                                isCompleted: viewModel.isDayCompleted(day),
-                                                isToday: isToday(day)
-                                            )
-                                        } else {
-                                            // Workout days are tappable
-                                            NavigationLink(destination: WorkoutDayDetailView(
-                                                workoutDay: day,
-                                                program: program,
-                                                repository: repository,
-                                                progressStore: progressStore,
-                                                allPrograms: allPrograms
-                                            )) {
-                                                DayRow(
-                                                    workoutDay: day,
-                                                    isCompleted: viewModel.isDayCompleted(day),
-                                                    isToday: isToday(day)
-                                                )
-                                            }
-                                            .buttonStyle(PlainButtonStyle())
-                                        }
-                                    }
-                                    .padding(.horizontal)
-                                }
-                                .padding(.vertical, 16)
-                                .transition(.opacity.combined(with: .move(edge: .top)))
+                        } else {
+                            // Workout days are tappable
+                            NavigationLink(destination: WorkoutDayDetailView(
+                                workoutDay: day,
+                                program: program,
+                                repository: repository,
+                                progressStore: progressStore,
+                                allPrograms: allPrograms
+                            )) {
+                                DayRow(
+                                    workoutDay: day,
+                                    isCompleted: viewModel.isDayCompleted(day),
+                                    isToday: isToday(day)
+                                )
                             }
-                        }
-                        
-                        // Add spacing between weeks (but not after the last week)
-                        if let lastWeek = viewModel.weeks.last, week.id != lastWeek.id {
-                            Divider()
-                                .background(Color.appTextSecondary.opacity(0.3))
-                                .padding(.horizontal)
-                                .padding(.vertical, 8)
+                            .buttonStyle(PlainButtonStyle())
                         }
                     }
+                    .padding(.horizontal)
                 }
                 .padding(.vertical)
-            }
-            .onAppear {
-                // Expand first week by default
-                if expandedWeeks.isEmpty, let firstWeek = viewModel.weeks.first {
-                    expandedWeeks.insert(firstWeek.weekNumber)
-                }
             }
         }
         .navigationTitle(program.title)
@@ -122,16 +80,41 @@ struct ProgramDaysView: View {
     }
     
     private func isToday(_ workoutDay: WorkoutDay) -> Bool {
-        // Simple logic: first incomplete workout day (not rest day) is "today"
-        // In a real app, this would use actual date tracking
         // Rest days should never be marked as "today"
         if workoutDay.isRestDay {
             return false
         }
-        let completedDays = viewModel.days.filter { viewModel.isDayCompleted($0) }
-        if let firstIncompleteIndex = viewModel.days.firstIndex(where: { !viewModel.isDayCompleted($0) && !$0.isRestDay }) {
-            return viewModel.days[firstIncompleteIndex].id == workoutDay.id
+        
+        let activeDays = viewModel.days.filter { !$0.isRestDay }
+        
+        // 1. If there are any incomplete days, the first one is "today"
+        if let firstIncomplete = activeDays.first(where: { !viewModel.isDayCompleted($0) }) {
+            return firstIncomplete.id == workoutDay.id
         }
+        
+        // 2. All days are completed (at least once).
+        // We need to find the "edge" where the current round ends.
+        // Identify this by finding the first day that was completed *after* the next day.
+        // e.g., Day 1 (Jan 5) > Day 2 (Jan 1). Next is Day 2.
+        
+        for i in 0..<(activeDays.count - 1) {
+            let currentDay = activeDays[i]
+            let nextDay = activeDays[i+1]
+            
+            if let date1 = viewModel.getCompletionDate(for: currentDay),
+               let date2 = viewModel.getCompletionDate(for: nextDay) {
+                if date1 > date2 {
+                    return nextDay.id == workoutDay.id
+                }
+            }
+        }
+        
+        // 3. If dates are all in order (D1 < D2 < D3), it means we just finished a full round (or the last day).
+        // The next day is the first day.
+        if let firstDay = activeDays.first {
+            return firstDay.id == workoutDay.id
+        }
+        
         return false
     }
 }

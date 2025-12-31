@@ -67,7 +67,8 @@ struct WorkoutHistoryView: View {
                                         session: session,
                                         programName: viewModel.getProgramName(for: session),
                                         workoutDayName: viewModel.getWorkoutDayName(for: session),
-                                        allPrograms: allPrograms
+                                        allPrograms: allPrograms,
+                                        progressStore: progressStore
                                     )) {
                                         WorkoutSessionRow(
                                             session: session,

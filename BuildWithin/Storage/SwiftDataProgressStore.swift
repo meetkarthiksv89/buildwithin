@@ -306,4 +306,16 @@ class SwiftDataProgressStore: ProgressStoreProtocol {
         
         return (try? modelContext.fetch(descriptor)) ?? []
     }
+    
+    func getAllSetLogsForExercise(exerciseId: String) -> [SetLog] {
+        let descriptor = FetchDescriptor<SetLog>(
+            predicate: #Predicate<SetLog> { setLog in
+                setLog.exerciseId == exerciseId &&
+                setLog.workoutSession?.endTime != nil
+            },
+            sortBy: [SortDescriptor(\.completedAt, order: .reverse)]
+        )
+        
+        return (try? modelContext.fetch(descriptor)) ?? []
+    }
 }

@@ -12,6 +12,7 @@ struct WorkoutSessionDetailView: View {
     let programName: String
     let workoutDayName: String
     let allPrograms: [ProgramContent]
+    let progressStore: ProgressStoreProtocol
     
     @State private var exerciseGroups: [(exercise: Exercise, sets: [SetLog])] = []
     
@@ -78,8 +79,15 @@ struct WorkoutSessionDetailView: View {
                         .padding(.horizontal)
                         
                         ForEach(Array(exerciseGroups.enumerated()), id: \.element.exercise.id) { index, group in
-                            ExerciseSessionCard(exercise: group.exercise, sets: group.sets)
-                                .padding(.horizontal)
+                            NavigationLink(destination: ExerciseHistoryView(
+                                exercise: group.exercise,
+                                progressStore: progressStore,
+                                allPrograms: allPrograms
+                            )) {
+                                ExerciseSessionCard(exercise: group.exercise, sets: group.sets)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .padding(.horizontal)
                         }
                     } else {
                         Text("No exercises completed")
@@ -247,7 +255,8 @@ struct ExerciseSessionCard: View {
             ),
             programName: "Fat Loss 4 Day",
             workoutDayName: "Upper Body Power",
-            allPrograms: []
+            allPrograms: [],
+            progressStore: ProgressStore()
         )
     }
 }
