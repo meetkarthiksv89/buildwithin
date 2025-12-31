@@ -75,6 +75,7 @@ class ActiveWorkoutViewModel: ObservableObject {
                         let previousLog = ExerciseSetLog(
                             exerciseId: exercise.id,
                             setId: set.id,
+                            setNumber: set.setNumber,
                             completedReps: mostRecentLog.completedReps,
                             completedWeight: mostRecentLog.completedWeight,
                             isCompleted: false // Don't mark as completed, just pre-populate values
@@ -86,15 +87,27 @@ class ActiveWorkoutViewModel: ObservableObject {
         }
     }
     
+    private func getSetNumber(setId: String, exerciseId: String) -> Int? {
+        if let exercise = exercises.first(where: { $0.id == exerciseId }),
+           let set = exercise.sets.first(where: { $0.id == setId }) {
+            return set.setNumber
+        }
+        return nil
+    }
+    
     func toggleSetCompletion(setId: String, exerciseId: String) {
         if var existingLog = setLogs[setId] {
             existingLog.isCompleted.toggle()
+            if existingLog.setNumber == nil {
+                existingLog.setNumber = getSetNumber(setId: setId, exerciseId: exerciseId)
+            }
             setLogs[setId] = existingLog
         } else {
             // Create new log
             let newLog = ExerciseSetLog(
                 exerciseId: exerciseId,
                 setId: setId,
+                setNumber: getSetNumber(setId: setId, exerciseId: exerciseId),
                 completedReps: nil,
                 completedWeight: nil,
                 isCompleted: true
@@ -111,11 +124,15 @@ class ActiveWorkoutViewModel: ObservableObject {
     func updateSetReps(setId: String, exerciseId: String, reps: Int?) {
         if var existingLog = setLogs[setId] {
             existingLog.completedReps = reps
+            if existingLog.setNumber == nil {
+                existingLog.setNumber = getSetNumber(setId: setId, exerciseId: exerciseId)
+            }
             setLogs[setId] = existingLog
         } else {
             let newLog = ExerciseSetLog(
                 exerciseId: exerciseId,
                 setId: setId,
+                setNumber: getSetNumber(setId: setId, exerciseId: exerciseId),
                 completedReps: reps,
                 completedWeight: nil,
                 isCompleted: false
@@ -131,11 +148,15 @@ class ActiveWorkoutViewModel: ObservableObject {
     func updateSetWeight(setId: String, exerciseId: String, weight: Double?) {
         if var existingLog = setLogs[setId] {
             existingLog.completedWeight = weight
+            if existingLog.setNumber == nil {
+                existingLog.setNumber = getSetNumber(setId: setId, exerciseId: exerciseId)
+            }
             setLogs[setId] = existingLog
         } else {
             let newLog = ExerciseSetLog(
                 exerciseId: exerciseId,
                 setId: setId,
+                setNumber: getSetNumber(setId: setId, exerciseId: exerciseId),
                 completedReps: nil,
                 completedWeight: weight,
                 isCompleted: false

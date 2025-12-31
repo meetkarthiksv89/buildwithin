@@ -15,6 +15,7 @@ struct WorkoutDayCompletion: Codable {
 struct ExerciseSetLog: Codable {
     let exerciseId: String
     let setId: String
+    var setNumber: Int?
     var completedReps: Int?
     var completedWeight: Double?
     var isCompleted: Bool

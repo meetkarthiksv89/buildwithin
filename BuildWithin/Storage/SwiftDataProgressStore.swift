@@ -104,20 +104,30 @@ class SwiftDataProgressStore: ProgressStoreProtocol {
             existingLog.completedReps = log.completedReps
             existingLog.completedWeight = log.completedWeight
             existingLog.isCompleted = log.isCompleted
+            // Also update setNumber if available
+            if let setNumber = log.setNumber {
+                existingLog.setNumber = setNumber
+            }
             if log.isCompleted && !existingLog.isCompleted {
                 existingLog.completedAt = Date()
             }
         } else {
-            // Create new log - try to get setNumber from previous logs with same setId
+            // Create new log
             var setNumber = 1
-            let previousLogDescriptor = FetchDescriptor<SetLog>(
-                predicate: #Predicate<SetLog> { setLog in
-                    setLog.setId == log.setId && setLog.workoutSession?.programId == programId
-                },
-                sortBy: [SortDescriptor(\.completedAt, order: .reverse)]
-            )
-            if let previousLog = try? modelContext.fetch(previousLogDescriptor).first {
-                setNumber = previousLog.setNumber
+            
+            if let logSetNumber = log.setNumber {
+                setNumber = logSetNumber
+            } else {
+                // Try to get setNumber from previous logs with same setId
+                let previousLogDescriptor = FetchDescriptor<SetLog>(
+                    predicate: #Predicate<SetLog> { setLog in
+                        setLog.setId == log.setId && setLog.workoutSession?.programId == programId
+                    },
+                    sortBy: [SortDescriptor(\.completedAt, order: .reverse)]
+                )
+                if let previousLog = try? modelContext.fetch(previousLogDescriptor).first {
+                    setNumber = previousLog.setNumber
+                }
             }
             
             let setLog = SetLog(
@@ -151,6 +161,7 @@ class SwiftDataProgressStore: ProgressStoreProtocol {
         return ExerciseSetLog(
             exerciseId: setLog.exerciseId,
             setId: setLog.setId,
+            setNumber: setLog.setNumber,
             completedReps: setLog.completedReps,
             completedWeight: setLog.completedWeight,
             isCompleted: setLog.isCompleted
@@ -172,6 +183,7 @@ class SwiftDataProgressStore: ProgressStoreProtocol {
             ExerciseSetLog(
                 exerciseId: setLog.exerciseId,
                 setId: setLog.setId,
+                setNumber: setLog.setNumber,
                 completedReps: setLog.completedReps,
                 completedWeight: setLog.completedWeight,
                 isCompleted: setLog.isCompleted
