@@ -86,6 +86,7 @@
         "chest",
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_incline_db_press_s1",
@@ -118,6 +119,7 @@
         "shoulders",
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_arnold_press_s1",
@@ -149,6 +151,7 @@
       "targetMuscleGroups": [
         "chest"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_chest_fly_s1",
@@ -180,6 +183,7 @@
       "targetMuscleGroups": [
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_lateral_raise_s1",
@@ -211,6 +215,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_tricep_pushdown_s1",
@@ -242,6 +247,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_overhead_extension_s1",
@@ -273,6 +279,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_decline_crunch_s1",
@@ -304,6 +311,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_lying_leg_raise_s1",
@@ -335,6 +343,7 @@
       "targetMuscleGroups": [
         "back"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_lat_pulldown_s1",
@@ -367,6 +376,7 @@
         "back",
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_reverse_pec_dec_fly_s1",
@@ -398,6 +408,7 @@
       "targetMuscleGroups": [
         "back"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_bent_over_db_row_s1",
@@ -430,6 +441,7 @@
         "back",
         "chest"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_lat_pullover_s1",
@@ -461,6 +473,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_bicep_21_curl_s1",
@@ -492,6 +505,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_hammer_curl_s1",
@@ -523,6 +537,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_reverse_crunch_s1",
@@ -554,6 +569,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_machine_crunch_s1",
@@ -586,6 +602,7 @@
         "legs",
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_sumo_squat_s1",
@@ -618,6 +635,7 @@
         "back",
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_back_extension_s1",
@@ -649,6 +667,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_seated_leg_press_s1",
@@ -680,6 +699,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_leg_extension_s1",
@@ -711,6 +731,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_seated_leg_curl_s1",
@@ -742,6 +763,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_seated_calf_raise_s1",
@@ -773,6 +795,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_oblique_crunch_s1",
@@ -804,6 +827,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_crunch_s1",
@@ -836,6 +860,7 @@
         "chest",
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_incline_db_press_s1",
@@ -868,6 +893,7 @@
         "shoulders",
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_machine_shoulder_press_s1",
@@ -899,6 +925,7 @@
       "targetMuscleGroups": [
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_front_raise_s1",
@@ -931,6 +958,7 @@
         "shoulders",
         "back"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_db_shrug_s1",
@@ -962,6 +990,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_seated_leg_press_s1",
@@ -993,6 +1022,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_cable_tricep_pushdown_rope_s1",
@@ -1024,6 +1054,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_machine_crunch_s1",
@@ -1055,6 +1086,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_bodyweight_plank_s1",
@@ -1087,6 +1119,7 @@
         "chest",
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_incline_db_press_w2_s1",
@@ -1119,6 +1152,7 @@
         "shoulders",
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_arnold_press_w2_s1",
@@ -1150,6 +1184,7 @@
       "targetMuscleGroups": [
         "chest"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_chest_fly_w2_s1",
@@ -1181,6 +1216,7 @@
       "targetMuscleGroups": [
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_lateral_raise_w2_s1",
@@ -1212,6 +1248,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_tricep_pushdown_w2_s1",
@@ -1243,6 +1280,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_cable_overhead_extension_w2_s1",
@@ -1274,6 +1312,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_decline_crunch_w2_s1",
@@ -1305,6 +1344,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_push_lying_leg_raise_w2_s1",
@@ -1336,6 +1376,7 @@
       "targetMuscleGroups": [
         "back"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_lat_pulldown_w2_s1",
@@ -1368,6 +1409,7 @@
         "back",
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_reverse_pec_dec_fly_w2_s1",
@@ -1399,6 +1441,7 @@
       "targetMuscleGroups": [
         "back"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_bent_over_db_row_w2_s1",
@@ -1431,6 +1474,7 @@
         "back",
         "chest"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_lat_pullover_w2_s1",
@@ -1462,6 +1506,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_bicep_21_curl_w2_s1",
@@ -1493,6 +1538,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_hammer_curl_w2_s1",
@@ -1524,6 +1570,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_reverse_crunch_w2_s1",
@@ -1555,6 +1602,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_pull_machine_crunch_w2_s1",
@@ -1587,6 +1635,7 @@
         "legs",
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_sumo_squat_w2_s1",
@@ -1619,6 +1668,7 @@
         "back",
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_back_extension_w2_s1",
@@ -1650,6 +1700,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_seated_leg_press_w2_s1",
@@ -1681,6 +1732,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_leg_extension_w2_s1",
@@ -1712,6 +1764,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_seated_leg_curl_w2_s1",
@@ -1743,6 +1796,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_seated_calf_raise_w2_s1",
@@ -1774,6 +1828,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_oblique_crunch_w2_s1",
@@ -1805,6 +1860,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_legs_crunch_w2_s1",
@@ -1837,6 +1893,7 @@
         "chest",
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_incline_db_press_w2_s1",
@@ -1869,6 +1926,7 @@
         "shoulders",
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_machine_shoulder_press_w2_s1",
@@ -1900,6 +1958,7 @@
       "targetMuscleGroups": [
         "shoulders"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_front_raise_w2_s1",
@@ -1932,6 +1991,7 @@
         "shoulders",
         "back"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_db_shrug_w2_s1",
@@ -1963,6 +2023,7 @@
       "targetMuscleGroups": [
         "legs"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_seated_leg_press_w2_s1",
@@ -1994,6 +2055,7 @@
       "targetMuscleGroups": [
         "arms"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_cable_tricep_pushdown_rope_w2_s1",
@@ -2025,6 +2087,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_machine_crunch_w2_s1",
@@ -2056,6 +2119,7 @@
       "targetMuscleGroups": [
         "core"
       ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {
           "id": "ex_full_bodyweight_plank_w2_s1",

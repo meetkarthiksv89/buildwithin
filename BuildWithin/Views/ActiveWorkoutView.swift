@@ -26,6 +26,8 @@ struct ActiveWorkoutView: View {
     @State private var showCompletionView = false
     @State private var showingCloseAlert = false
     @State private var isKeyboardVisible = false
+    @State private var showVideo = false
+    @State private var videoURL: String?
     
     init(exercises: [Exercise], programId: String, workoutDayId: String, programName: String, workoutDayName: String, allPrograms: [ProgramContent], progressStore: ProgressStoreProtocol) {
         self.exercises = exercises
@@ -120,15 +122,20 @@ struct ActiveWorkoutView: View {
                                                     .font(.system(size: 16))
                                             }
                                     }
-                                    Button(action: {}) {
-                                        Circle()
-                                            .fill(Color.appPrimaryGreen)
-                                            .frame(width: 35, height: 35)
-                                            .overlay {
-                                                Image(systemName: "play.fill")
-                                                    .foregroundColor(.black)
-                                                    .font(.system(size: 16))
-                                            }
+                                    if let videoLink = currentExercise.videoLink, let url = URL(string: videoLink) {
+                                        Button(action: {
+                                            videoURL = videoLink
+                                            showVideo = true
+                                        }) {
+                                            Circle()
+                                                .fill(Color.appPrimaryGreen)
+                                                .frame(width: 35, height: 35)
+                                                .overlay {
+                                                    Image(systemName: "play.fill")
+                                                        .foregroundColor(.black)
+                                                        .font(.system(size: 16))
+                                                }
+                                        }
                                     }
                                 }
                             }
@@ -293,6 +300,11 @@ struct ActiveWorkoutView: View {
             .presentationDetents([.large])
             .interactiveDismissDisabled(false)
         }
+        .sheet(isPresented: $showVideo) {
+            if let videoURLString = videoURL, let url = URL(string: videoURLString) {
+                SafariView(url: url)
+            }
+        }
     }
     
     private var progress: Double {
@@ -349,7 +361,8 @@ struct ActiveWorkoutView: View {
                         ExerciseSet(id: "s1", setNumber: 1, targetReps: 10, targetWeight: nil),
                         ExerciseSet(id: "s2", setNumber: 2, targetReps: 10, targetWeight: nil),
                         ExerciseSet(id: "s3", setNumber: 3, targetReps: 10, targetWeight: nil)
-                    ]
+                    ],
+                    videoLink: "https://www.youtube.com/watch?v=k9MY1ijAvGo"
                 ),
                 Exercise(
                     id: "ex1",
@@ -363,7 +376,8 @@ struct ActiveWorkoutView: View {
                         ExerciseSet(id: "s1", setNumber: 1, targetReps: 10, targetWeight: nil),
                         ExerciseSet(id: "s2", setNumber: 2, targetReps: 10, targetWeight: nil),
                         ExerciseSet(id: "s3", setNumber: 3, targetReps: 10, targetWeight: nil)
-                    ]
+                    ],
+                    videoLink: "https://www.youtube.com/watch?v=k9MY1ijAvGo"
                 )
             ],
             programId: "prog1",

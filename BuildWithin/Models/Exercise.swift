@@ -16,4 +16,5 @@ struct Exercise: Codable, Identifiable {
     let restSeconds: Int
     let targetMuscleGroups: [MuscleGroup]
     let sets: [ExerciseSet]
+    let videoLink: String?
 }

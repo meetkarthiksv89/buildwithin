@@ -113,7 +113,8 @@ struct SetCompletionRow: View {
             equipment: .barbell,
             restSeconds: 90,
             targetMuscleGroups: [.chest],
-            sets: []
+            sets: [],
+            videoLink: nil
         ),
         viewModel: ActiveWorkoutViewModel(
             exercises: [],

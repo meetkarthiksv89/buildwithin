@@ -219,7 +219,8 @@ class ActiveWorkoutViewModel: ObservableObject {
             equipment: currentExercise.equipment,
             restSeconds: currentExercise.restSeconds,
             targetMuscleGroups: currentExercise.targetMuscleGroups,
-            sets: currentExercise.sets + [newSet]
+            sets: currentExercise.sets + [newSet],
+            videoLink: currentExercise.videoLink
         )
         
         // Replace exercise in array

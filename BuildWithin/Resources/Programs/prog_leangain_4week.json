@@ -36,7 +36,8 @@
       "order": 1,
       "equipment": "barbell",
       "restSeconds": 180,
-      "targetMuscleGroups": ["chest", "arms"],
+      "targetMuscleGroups": ["chest", "arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_upper_bench_press_s1", "setNumber": 1, "targetReps": 5, "targetWeight": null},
         {"id": "ex_upper_bench_press_s2", "setNumber": 2, "targetReps": 5, "targetWeight": null},
@@ -51,7 +52,8 @@
       "order": 2,
       "equipment": "barbell",
       "restSeconds": 120,
-      "targetMuscleGroups": ["shoulders", "arms"],
+      "targetMuscleGroups": ["shoulders", "arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_upper_overhead_press_s1", "setNumber": 1, "targetReps": 6, "targetWeight": null},
         {"id": "ex_upper_overhead_press_s2", "setNumber": 2, "targetReps": 6, "targetWeight": null},
@@ -65,7 +67,8 @@
       "order": 3,
       "equipment": "barbell",
       "restSeconds": 120,
-      "targetMuscleGroups": ["back", "arms"],
+      "targetMuscleGroups": ["back", "arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_upper_bent_row_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
         {"id": "ex_upper_bent_row_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
@@ -79,7 +82,8 @@
       "order": 4,
       "equipment": "bodyweight",
       "restSeconds": 90,
-      "targetMuscleGroups": ["back", "arms"],
+      "targetMuscleGroups": ["back", "arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_upper_pullups_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
         {"id": "ex_upper_pullups_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
@@ -93,7 +97,8 @@
       "order": 1,
       "equipment": "barbell",
       "restSeconds": 180,
-      "targetMuscleGroups": ["legs", "core"],
+      "targetMuscleGroups": ["legs", "core"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_lower_squat_s1", "setNumber": 1, "targetReps": 5, "targetWeight": null},
         {"id": "ex_lower_squat_s2", "setNumber": 2, "targetReps": 5, "targetWeight": null},
@@ -108,7 +113,8 @@
       "order": 2,
       "equipment": "barbell",
       "restSeconds": 180,
-      "targetMuscleGroups": ["legs", "back"],
+      "targetMuscleGroups": ["legs", "back"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_lower_deadlift_s1", "setNumber": 1, "targetReps": 6, "targetWeight": null},
         {"id": "ex_lower_deadlift_s2", "setNumber": 2, "targetReps": 6, "targetWeight": null},
@@ -122,7 +128,8 @@
       "order": 3,
       "equipment": "machine",
       "restSeconds": 120,
-      "targetMuscleGroups": ["legs"],
+      "targetMuscleGroups": ["legs"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_lower_leg_press_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
         {"id": "ex_lower_leg_press_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
@@ -136,7 +143,8 @@
       "order": 4,
       "equipment": "machine",
       "restSeconds": 90,
-      "targetMuscleGroups": ["legs"],
+      "targetMuscleGroups": ["legs"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_lower_leg_curl_s1", "setNumber": 1, "targetReps": 12, "targetWeight": null},
         {"id": "ex_lower_leg_curl_s2", "setNumber": 2, "targetReps": 12, "targetWeight": null},
@@ -150,7 +158,8 @@
       "order": 1,
       "equipment": "dumbbell",
       "restSeconds": 120,
-      "targetMuscleGroups": ["chest", "shoulders"],
+      "targetMuscleGroups": ["chest", "shoulders"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_push_incline_db_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
         {"id": "ex_push_incline_db_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
@@ -165,7 +174,8 @@
       "order": 2,
       "equipment": "dumbbell",
       "restSeconds": 90,
-      "targetMuscleGroups": ["shoulders", "arms"],
+      "targetMuscleGroups": ["shoulders", "arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_push_shoulder_press_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
         {"id": "ex_push_shoulder_press_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
@@ -179,7 +189,8 @@
       "order": 3,
       "equipment": "barbell",
       "restSeconds": 90,
-      "targetMuscleGroups": ["arms"],
+      "targetMuscleGroups": ["arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_push_triceps_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
         {"id": "ex_push_triceps_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
@@ -193,7 +204,8 @@
       "order": 4,
       "equipment": "dumbbell",
       "restSeconds": 60,
-      "targetMuscleGroups": ["shoulders"],
+      "targetMuscleGroups": ["shoulders"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_push_lateral_raise_s1", "setNumber": 1, "targetReps": 12, "targetWeight": null},
         {"id": "ex_push_lateral_raise_s2", "setNumber": 2, "targetReps": 12, "targetWeight": null},
@@ -207,7 +219,8 @@
       "order": 1,
       "equipment": "machine",
       "restSeconds": 120,
-      "targetMuscleGroups": ["back"],
+      "targetMuscleGroups": ["back"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_pull_pulldown_s1", "setNumber": 1, "targetReps": 8, "targetWeight": null},
         {"id": "ex_pull_pulldown_s2", "setNumber": 2, "targetReps": 8, "targetWeight": null},
@@ -222,7 +235,8 @@
       "order": 2,
       "equipment": "machine",
       "restSeconds": 90,
-      "targetMuscleGroups": ["back"],
+      "targetMuscleGroups": ["back"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_pull_cable_row_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
         {"id": "ex_pull_cable_row_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
@@ -236,7 +250,8 @@
       "order": 3,
       "equipment": "machine",
       "restSeconds": 60,
-      "targetMuscleGroups": ["shoulders", "back"],
+      "targetMuscleGroups": ["shoulders", "back"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_pull_face_pull_s1", "setNumber": 1, "targetReps": 15, "targetWeight": null},
         {"id": "ex_pull_face_pull_s2", "setNumber": 2, "targetReps": 15, "targetWeight": null},
@@ -250,7 +265,8 @@
       "order": 4,
       "equipment": "barbell",
       "restSeconds": 60,
-      "targetMuscleGroups": ["arms"],
+      "targetMuscleGroups": ["arms"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_pull_barbell_curl_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
         {"id": "ex_pull_barbell_curl_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
@@ -264,7 +280,8 @@
       "order": 1,
       "equipment": "barbell",
       "restSeconds": 150,
-      "targetMuscleGroups": ["legs", "core"],
+      "targetMuscleGroups": ["legs", "core"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_legs_front_squat_s1", "setNumber": 1, "targetReps": 6, "targetWeight": null},
         {"id": "ex_legs_front_squat_s2", "setNumber": 2, "targetReps": 6, "targetWeight": null},
@@ -278,7 +295,8 @@
       "order": 2,
       "equipment": "dumbbell",
       "restSeconds": 90,
-      "targetMuscleGroups": ["legs"],
+      "targetMuscleGroups": ["legs"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_legs_bulgarian_split_s1", "setNumber": 1, "targetReps": 10, "targetWeight": null},
         {"id": "ex_legs_bulgarian_split_s2", "setNumber": 2, "targetReps": 10, "targetWeight": null},
@@ -292,7 +310,8 @@
       "order": 3,
       "equipment": "machine",
       "restSeconds": 60,
-      "targetMuscleGroups": ["legs"],
+      "targetMuscleGroups": ["legs"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_legs_leg_extension_s1", "setNumber": 1, "targetReps": 12, "targetWeight": null},
         {"id": "ex_legs_leg_extension_s2", "setNumber": 2, "targetReps": 12, "targetWeight": null},
@@ -306,7 +325,8 @@
       "order": 4,
       "equipment": "machine",
       "restSeconds": 60,
-      "targetMuscleGroups": ["legs"],
+      "targetMuscleGroups": ["legs"      ],
+      "videoLink": "https://www.youtube.com/watch?v=k9MY1ijAvGo",
       "sets": [
         {"id": "ex_legs_calf_raise_s1", "setNumber": 1, "targetReps": 15, "targetWeight": null},
         {"id": "ex_legs_calf_raise_s2", "setNumber": 2, "targetReps": 15, "targetWeight": null},

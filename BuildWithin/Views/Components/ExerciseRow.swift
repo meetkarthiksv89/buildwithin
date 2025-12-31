@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseRow: View {
     let exercise: Exercise
+    @State private var showVideo = false
     
     var body: some View {
         HStack(spacing: 16) {
@@ -29,9 +30,22 @@ struct ExerciseRow: View {
             
             Spacer()
             
-            Image(systemName: "play.circle")
-                .foregroundColor(.appInactiveGray)
-                .font(.system(size: 24))
+            if let videoLink = exercise.videoLink, let url = URL(string: videoLink) {
+                Button(action: {
+                    showVideo = true
+                }) {
+                    Image(systemName: "play.circle.fill")
+                        .foregroundColor(.appPrimaryGreen)
+                        .font(.system(size: 24))
+                }
+                .sheet(isPresented: $showVideo) {
+                    SafariView(url: url)
+                }
+            } else {
+                Image(systemName: "play.circle")
+                    .foregroundColor(.appInactiveGray)
+                    .font(.system(size: 24))
+            }
         }
         .padding(.vertical, 8)
     }
@@ -60,7 +74,8 @@ struct ExerciseRow: View {
             ExerciseSet(id: "s1", setNumber: 1, targetReps: 8, targetWeight: nil),
             ExerciseSet(id: "s2", setNumber: 2, targetReps: 8, targetWeight: nil),
             ExerciseSet(id: "s3", setNumber: 3, targetReps: 8, targetWeight: nil)
-        ]
+        ],
+        videoLink: "https://www.youtube.com/watch?v=k9MY1ijAvGo"
     ))
     .padding()
     .background(Color.appBackground)
