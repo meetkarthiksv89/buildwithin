@@ -26,8 +26,6 @@ struct ActiveWorkoutView: View {
     @State private var showCompletionView = false
     @State private var showingCloseAlert = false
     @State private var isKeyboardVisible = false
-    @State private var showVideo = false
-    @State private var videoURL: String?
     
     init(exercises: [Exercise], programId: String, workoutDayId: String, programName: String, workoutDayName: String, allPrograms: [ProgramContent], progressStore: ProgressStoreProtocol) {
         self.exercises = exercises
@@ -112,10 +110,7 @@ struct ActiveWorkoutView: View {
                                 Spacer()
                                 
                                 if let videoLink = currentExercise.videoLink, let url = URL(string: videoLink) {
-                                    Button(action: {
-                                        videoURL = videoLink
-                                        showVideo = true
-                                    }) {
+                                    Link(destination: url) {
                                         Circle()
                                             .fill(Color.appTextSecondary.opacity(0.2))
                                             .frame(width: 35, height: 35)
@@ -286,11 +281,6 @@ struct ActiveWorkoutView: View {
             )
             .presentationDetents([.large])
             .interactiveDismissDisabled(false)
-        }
-        .sheet(isPresented: $showVideo) {
-            if let videoURLString = videoURL, let url = URL(string: videoURLString) {
-                SafariView(url: url)
-            }
         }
     }
     
