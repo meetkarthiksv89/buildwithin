@@ -47,7 +47,7 @@ struct ProgramsListView: View {
                     VStack(spacing: 0) {
                         // Header
                         HStack {
-                            Text("My Programs")
+                            Text("Training")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(.appTextPrimary)
@@ -68,17 +68,6 @@ struct ProgramsListView: View {
                                                 .font(.system(size: 16))
                                         }
                                 }
-                                
-                                Button(action: {}) {
-                                    Circle()
-                                        .fill(Color.appCardBackground)
-                                        .frame(width: 40, height: 40)
-                                        .overlay {
-                                            Image(systemName: "person.fill")
-                                                .foregroundColor(.appTextSecondary)
-                                                .font(.system(size: 16))
-                                        }
-                                }
                             }
                         }
                         .padding()
@@ -86,16 +75,6 @@ struct ProgramsListView: View {
                         // Programs list
                         ScrollView {
                             VStack(spacing: 16) {
-                                // CURRENT section
-                                HStack {
-                                    Text("CURRENT")
-                                        .font(.caption)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.appLightGreen)
-                                    Spacer()
-                                }
-                                .padding(.horizontal)
-                                
                                 ForEach(viewModel.programs) { programContent in
                                     NavigationLink(destination: ProgramDaysView(
                                         program: programContent.program,

@@ -21,7 +21,7 @@ struct MainTabView: View {
         TabView {
             ProgramsListView(repository: repository, progressStore: progressStore)
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label("Training", systemImage: "dumbbell.fill")
                 }
             
             NutritionView()
