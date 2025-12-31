@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct CompletionButtonStyle: ButtonStyle {
+    @Binding var isPressed: Bool
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+            .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
+            .onChange(of: configuration.isPressed) { oldValue, newValue in
+                isPressed = newValue
+            }
+    }
+}
+
 struct SetCompletionRow: View {
     let set: ExerciseSet
     let exercise: Exercise
@@ -14,91 +27,136 @@ struct SetCompletionRow: View {
     
     @State private var repsText: String = ""
     @State private var weightText: String = ""
+    @State private var isPressed = false
+    
+    private var isCompleted: Bool {
+        viewModel.isSetCompleted(setId: set.id)
+    }
     
     var body: some View {
         HStack(spacing: 16) {
-            // Set number
-            Text("\(set.setNumber)")
-                .font(.headline)
-                .foregroundColor(.appTextSecondary)
-                .frame(width: 40)
-            
-            // Weight input (if applicable)
-            if exercise.equipment != .bodyweight {
-                TextField("LBS", text: $weightText)
-                    .keyboardType(.decimalPad)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(width: 80)
-                    .onChange(of: weightText) { oldValue, newValue in
-                        if let weight = Double(newValue) {
-                            viewModel.updateSetWeight(setId: set.id, exerciseId: exercise.id, weight: weight)
-                        } else {
-                            viewModel.updateSetWeight(setId: set.id, exerciseId: exercise.id, weight: nil)
-                        }
-                    }
-                    .onAppear {
-                        if let log = viewModel.getSetLog(setId: set.id), let weight = log.completedWeight {
-                            weightText = String(format: "%.0f", weight)
-                        }
-                    }
-            } else {
-                Text("LBS")
-                    .font(.subheadline)
-                    .foregroundColor(.appTextSecondary)
-                    .frame(width: 80)
+            // Set number badge - Spotify style
+            ZStack {
+                Circle()
+                    .fill(isCompleted ? Color.appPrimaryGreen.opacity(0.2) : Color.appCardBackground)
+                    .frame(width: 40, height: 40)
+                
+                Text("\(set.setNumber)")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(isCompleted ? .appPrimaryGreen : .appTextSecondary)
             }
             
-            // Reps input
-            if let targetReps = set.targetReps {
-                TextField("REPS", text: $repsText)
-                    .keyboardType(.numberPad)
-                    .textFieldStyle(.roundedBorder)
-                    .frame(width: 80)
-                    .onChange(of: repsText) { oldValue, newValue in
-                        if let reps = Int(newValue) {
-                            viewModel.updateSetReps(setId: set.id, exerciseId: exercise.id, reps: reps)
-                        } else {
-                            viewModel.updateSetReps(setId: set.id, exerciseId: exercise.id, reps: nil)
-                        }
+            // Weight and Reps inputs - Card style
+            HStack(spacing: 12) {
+                // Weight input
+                if exercise.equipment != .bodyweight {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Weight")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(.appTextSecondary)
+                        
+                        TextField("0", text: $weightText)
+                            .keyboardType(.decimalPad)
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.appTextPrimary)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 10)
+                            .background(Color.appBackground)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(isCompleted ? Color.appPrimaryGreen.opacity(0.3) : Color.appInactiveGray.opacity(0.3), lineWidth: 1)
+                            )
+                            .onChange(of: weightText) { oldValue, newValue in
+                                if let weight = Double(newValue) {
+                                    viewModel.updateSetWeight(setId: set.id, exerciseId: exercise.id, weight: weight)
+                                } else {
+                                    viewModel.updateSetWeight(setId: set.id, exerciseId: exercise.id, weight: nil)
+                                }
+                            }
+                            .onAppear {
+                                if let log = viewModel.getSetLog(setId: set.id), let weight = log.completedWeight {
+                                    weightText = String(format: "%.0f", weight)
+                                }
+                            }
                     }
-                    .onAppear {
-                        if let log = viewModel.getSetLog(setId: set.id), let reps = log.completedReps {
-                            repsText = String(reps)
-                        } else if let targetReps = set.targetReps {
-                            repsText = String(targetReps)
-                        }
+                }
+                
+                // Reps input
+                if let targetReps = set.targetReps {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Reps")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundColor(.appTextSecondary)
+                        
+                        TextField("0", text: $repsText)
+                            .keyboardType(.numberPad)
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundColor(.appTextPrimary)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 10)
+                            .background(Color.appBackground)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(isCompleted ? Color.appPrimaryGreen.opacity(0.3) : Color.appInactiveGray.opacity(0.3), lineWidth: 1)
+                            )
+                            .onChange(of: repsText) { oldValue, newValue in
+                                if let reps = Int(newValue) {
+                                    viewModel.updateSetReps(setId: set.id, exerciseId: exercise.id, reps: reps)
+                                } else {
+                                    viewModel.updateSetReps(setId: set.id, exerciseId: exercise.id, reps: nil)
+                                }
+                            }
+                            .onAppear {
+                                if let log = viewModel.getSetLog(setId: set.id), let reps = log.completedReps {
+                                    repsText = String(reps)
+                                } else if let targetReps = set.targetReps {
+                                    repsText = String(targetReps)
+                                }
+                            }
                     }
-            } else {
-                // Timed set - no reps input
-                Text("REPS")
-                    .font(.subheadline)
-                    .foregroundColor(.appTextSecondary)
-                    .frame(width: 80)
+                }
             }
             
             Spacer()
             
-            // Completion toggle
+            // Completion indicator - Spotify style checkmark with proper tap target
             Button(action: {
-                viewModel.toggleSetCompletion(setId: set.id, exerciseId: exercise.id)
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+                    viewModel.toggleSetCompletion(setId: set.id, exerciseId: exercise.id)
+                }
             }) {
-                Circle()
-                    .fill(viewModel.isSetCompleted(setId: set.id) ? Color.appPrimaryGreen : Color.clear)
-                    .overlay(
-                        Circle()
-                            .stroke(viewModel.isSetCompleted(setId: set.id) ? Color.appPrimaryGreen : Color.appInactiveGray, lineWidth: 2)
-                    )
-                    .frame(width: 32, height: 32)
-                    .overlay {
-                        if viewModel.isSetCompleted(setId: set.id) {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.black)
-                                .font(.system(size: 14, weight: .bold))
-                        }
+                ZStack {
+                    Circle()
+                        .fill(isCompleted ? Color.appPrimaryGreen : Color.clear)
+                        .frame(width: 36, height: 36)
+                        .overlay(
+                            Circle()
+                                .stroke(isCompleted ? Color.appPrimaryGreen : Color.appInactiveGray, lineWidth: 2)
+                        )
+                    
+                    if isCompleted {
+                        Image(systemName: "checkmark")
+                            .foregroundColor(.black)
+                            .font(.system(size: 14, weight: .bold))
                     }
+                }
+                .frame(width: 48, height: 48)
+                .contentShape(Circle())
             }
+            .buttonStyle(CompletionButtonStyle(isPressed: $isPressed))
         }
-        .padding(.vertical, 8)
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.appCardBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(isCompleted ? Color.appPrimaryGreen.opacity(0.3) : Color.clear, lineWidth: 1.5)
+                )
+        )
+        .opacity(isCompleted ? 1.0 : 0.95)
     }
 }
 
