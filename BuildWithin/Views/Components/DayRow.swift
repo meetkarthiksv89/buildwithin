@@ -15,8 +15,8 @@ struct DayRow: View {
     var body: some View {
         if isToday && !workoutDay.isRestDay {
             // Highlighted "TODAY" row (only for workout days)
-            HStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 4) {
+            HStack(spacing: 20) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text("DAY")
                         .font(.caption)
                         .fontWeight(.bold)
@@ -29,18 +29,18 @@ struct DayRow: View {
                 }
                 .frame(width: 60)
                 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text(workoutDay.title)
                         .font(.headline)
                         .foregroundColor(.appTextPrimary)
                     
                     if let description = workoutDay.description {
                         Text(description)
-                            .font(.subheadline)
+                            .font(.caption)
                             .foregroundColor(.appTextSecondary)
                     }
                     
-                    HStack(spacing: 4) {
+                    HStack(spacing: 6) {
                         Image(systemName: "clock")
                             .font(.caption)
                             .foregroundColor(.appTextSecondary)
@@ -48,23 +48,25 @@ struct DayRow: View {
                             .font(.caption)
                             .foregroundColor(.appTextSecondary)
                     }
+                    .padding(.top, 4)
                 }
                 
                 Spacer()
             }
-            .padding()
+            .padding(.horizontal, 16)
+            .padding(.vertical, 16)
             .background(Color.appCardBackground)
             .overlay(
                 Rectangle()
                     .fill(Color.appPrimaryGreen)
                     .frame(width: 4)
-                    .padding(.vertical, 8),
+                    .padding(.vertical, 12),
                 alignment: .leading
             )
             .cornerRadius(12)
         } else {
             // Regular day row
-            HStack {
+            HStack(spacing: 12) {
                 Text("DAY \(String(format: "%02d", workoutDay.dayNumber))")
                     .font(.caption)
                     .foregroundColor(workoutDay.isRestDay ? .appTextSecondary.opacity(0.7) : .appTextSecondary)
@@ -76,7 +78,8 @@ struct DayRow: View {
                 
                 Spacer()
             }
-            .padding()
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
             .background(workoutDay.isRestDay ? Color.appCardBackground.opacity(0.5) : Color.appCardBackground)
             .cornerRadius(12)
             .opacity(workoutDay.isRestDay ? 0.6 : 1.0)

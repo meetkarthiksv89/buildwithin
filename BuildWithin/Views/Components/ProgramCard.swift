@@ -45,6 +45,7 @@ struct ProgramCard: View {
         id: "test",
         title: "Fat Loss 4-Day Split",
         subtitle: "Push • Pull • Legs • Full Body",
+        description: nil,
         category: .strength,
         coverImageURL: "",
         totalDays: 4,

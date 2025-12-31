@@ -11,6 +11,7 @@ struct Program: Codable, Identifiable {
     let id: String
     let title: String
     let subtitle: String
+    let description: String?
     let category: ProgramCategory
     let coverImageURL: String
     let totalDays: Int

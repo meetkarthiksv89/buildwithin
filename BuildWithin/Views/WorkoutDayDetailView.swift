@@ -157,6 +157,7 @@ struct WorkoutDayDetailView: View {
                 id: "prog1",
                 title: "Test Program",
                 subtitle: "Test",
+                description: nil,
                 category: .strength,
                 coverImageURL: "",
                 totalDays: 4,

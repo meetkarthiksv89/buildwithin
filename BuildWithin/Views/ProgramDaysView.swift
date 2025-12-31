@@ -33,8 +33,22 @@ struct ProgramDaysView: View {
             Color.appBackground
                 .ignoresSafeArea()
             
-            ScrollView {
-                VStack(spacing: 16) {
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 20) {
+                    if let description = program.description, !description.isEmpty {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(description)
+                                .font(.body)
+                                .foregroundColor(.appTextSecondary)
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal)
+                        }
+                        .padding(.top, 8)
+                        .padding(.bottom, 16)
+                    }
+                    
+                    
                     ForEach(viewModel.days) { day in
                         if day.isRestDay {
                             // Rest days are not tappable
@@ -63,20 +77,13 @@ struct ProgramDaysView: View {
                     }
                     .padding(.horizontal)
                 }
-                .padding(.vertical)
+                .padding(.top, 8)
+                .padding(.bottom, 20)
             }
         }
         .navigationTitle(program.title)
         .navigationBarTitleDisplayMode(.large)
         .toolbar(.hidden, for: .tabBar)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {}) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.appTextPrimary)
-                }
-            }
-        }
     }
     
     private func isToday(_ workoutDay: WorkoutDay) -> Bool {
@@ -126,6 +133,7 @@ struct ProgramDaysView: View {
                 id: "prog1",
                 title: "5k Runner Prep",
                 subtitle: "Running",
+                description: "asdfasdfasdfasdfasdf",
                 category: .running,
                 coverImageURL: "",
                 totalDays: 6,

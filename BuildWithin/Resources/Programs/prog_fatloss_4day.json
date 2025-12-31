@@ -1,8 +1,9 @@
 {
   "program": {
     "id": "prog_fatloss_4day_01",
-    "title": "Fat Loss 4-Day Split",
+    "title": "Fat Loss",
     "subtitle": "Push • Pull • Legs • Full Body",
+    "description": "A comprehensive 4-day strength training program designed to maximize fat loss while preserving muscle mass. This program alternates between push, pull, legs, and full-body workouts with strategic rest days to optimize recovery and performance.",
     "category": "strength",
     "coverImageURL": "fatloss_4day_cover.jpg",
     "totalDays": 14,
