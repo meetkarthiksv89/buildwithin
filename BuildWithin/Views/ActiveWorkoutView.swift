@@ -23,6 +23,7 @@ struct ActiveWorkoutView: View {
     @State private var timer: Timer?
     @State private var showingFinishAlert = false
     @State private var showCompletionView = false
+    @State private var showingCloseAlert = false
     
     init(exercises: [Exercise], programId: String, workoutDayId: String, programName: String, workoutDayName: String, allPrograms: [ProgramContent], progressStore: ProgressStoreProtocol) {
         self.exercises = exercises
@@ -49,7 +50,9 @@ struct ActiveWorkoutView: View {
                 VStack(spacing: 0) {
                     // Top bar
                     HStack {
-                        Button(action: { dismiss() }) {
+                        Button(action: { 
+                            showingCloseAlert = true
+                        }) {
                             Image(systemName: "xmark")
                                 .foregroundColor(.appTextPrimary)
                                 .font(.system(size: 16))
@@ -94,21 +97,6 @@ struct ActiveWorkoutView: View {
                     
                     ScrollView {
                         VStack(spacing: 24) {
-                            // Video placeholder
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.appCardBackground)
-                                .frame(height: 250)
-                                .overlay {
-                                    VStack {
-                                        Image(systemName: "play.circle.fill")
-                                            .font(.system(size: 64))
-                                            .foregroundColor(.appTextSecondary)
-                                        Text("Exercise Video")
-                                            .font(.subheadline)
-                                            .foregroundColor(.appTextSecondary)
-                                    }
-                                }
-                                .padding()
                             
                             // Exercise name
                             HStack {
@@ -119,18 +107,30 @@ struct ActiveWorkoutView: View {
                                 
                                 Spacer()
                                 
-                                Button(action: {}) {
-                                    Circle()
-                                        .fill(Color.appPrimaryGreen)
-                                        .frame(width: 44, height: 44)
-                                        .overlay {
-                                            Image(systemName: "mic.fill")
-                                                .foregroundColor(.black)
-                                                .font(.system(size: 16))
-                                        }
+                                HStack {
+                                    Button(action: {}) {
+                                        Circle()
+                                            .fill(Color.appPrimaryGreen)
+                                            .frame(width: 35, height: 35)
+                                            .overlay {
+                                                Image(systemName: "mic.fill")
+                                                    .foregroundColor(.black)
+                                                    .font(.system(size: 16))
+                                            }
+                                    }
+                                    Button(action: {}) {
+                                        Circle()
+                                            .fill(Color.appPrimaryGreen)
+                                            .frame(width: 35, height: 35)
+                                            .overlay {
+                                                Image(systemName: "play.fill")
+                                                    .foregroundColor(.black)
+                                                    .font(.system(size: 16))
+                                            }
+                                    }
                                 }
                             }
-                            .padding(.horizontal)
+                            .padding()
                             
                             // Sets section
                             VStack(alignment: .leading, spacing: 16) {
@@ -185,16 +185,12 @@ struct ActiveWorkoutView: View {
                         Button(action: {
                             viewModel.previousExercise()
                         }) {
-                            HStack {
-                                Image(systemName: "chevron.left")
-                                    .foregroundColor(.appTextPrimary)
-                                Text("Previous")
-                                    .foregroundColor(.appTextPrimary)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.appCardBackground)
-                            .cornerRadius(12)
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(.appTextPrimary)
+//                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.appCardBackground)
+                                .cornerRadius(12)
                         }
                         .disabled(!viewModel.canGoToPrevious)
                         .opacity(viewModel.canGoToPrevious ? 1.0 : 0.5)
@@ -215,13 +211,29 @@ struct ActiveWorkoutView: View {
                             Button(action: {
                                 viewModel.nextExercise()
                             }) {
-                                Text("Next >")
-                                    .font(.headline)
-                                    .foregroundColor(.black)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(Color.appPrimaryGreen)
-                                    .cornerRadius(12)
+                                ZStack {
+                                    if let nextExercise = nextExercise {
+                                        Text(nextExercise.name)
+                                            .font(.headline)
+                                            .foregroundColor(.black)
+                                    } else {
+                                        Text("Next")
+                                            .font(.headline)
+                                            .foregroundColor(.black)
+                                    }
+                                    
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 14))
+                                            .padding(.trailing)
+                                    }
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.appPrimaryGreen)
+                                .cornerRadius(12)
                             }
                         }
                     }
@@ -242,6 +254,15 @@ struct ActiveWorkoutView: View {
             }
         } message: {
             Text("Are you sure you want to finish this workout?")
+        }
+        .alert("End Workout Session?", isPresented: $showingCloseAlert) {
+            Button("Cancel", role: .cancel) {}
+            Button("End Session", role: .destructive) {
+                stopTimer()
+                dismiss()
+            }
+        } message: {
+            Text("Are you sure you want to end this workout session? Your progress will not be saved.")
         }
         .sheet(isPresented: $showCompletionView) {
             WorkoutCompletionView(
@@ -267,6 +288,11 @@ struct ActiveWorkoutView: View {
     private var progress: Double {
         guard exercises.count > 0 else { return 0 }
         return Double(viewModel.currentExerciseIndex + 1) / Double(exercises.count)
+    }
+    
+    private var nextExercise: Exercise? {
+        guard viewModel.canGoToNext else { return nil }
+        return exercises[viewModel.currentExerciseIndex + 1]
     }
     
     private func startTimer() {
@@ -301,6 +327,20 @@ struct ActiveWorkoutView: View {
     NavigationStack {
         ActiveWorkoutView(
             exercises: [
+                Exercise(
+                    id: "ex1",
+                    workoutDayId: "day1",
+                    name: "Barbell Bench Press",
+                    order: 1,
+                    equipment: .barbell,
+                    restSeconds: 90,
+                    targetMuscleGroups: [.chest, .arms],
+                    sets: [
+                        ExerciseSet(id: "s1", setNumber: 1, targetReps: 10, targetWeight: nil),
+                        ExerciseSet(id: "s2", setNumber: 2, targetReps: 10, targetWeight: nil),
+                        ExerciseSet(id: "s3", setNumber: 3, targetReps: 10, targetWeight: nil)
+                    ]
+                ),
                 Exercise(
                     id: "ex1",
                     workoutDayId: "day1",

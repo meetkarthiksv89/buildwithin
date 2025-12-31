@@ -15,6 +15,7 @@ struct WorkoutDayDetailView: View {
     let allPrograms: [ProgramContent]
     
     @StateObject private var viewModel: WorkoutDayDetailViewModel
+    @State private var showActiveWorkout = false
     
     init(workoutDay: WorkoutDay, program: Program, repository: ProgramRepository, progressStore: ProgressStoreProtocol, allPrograms: [ProgramContent]) {
         self.workoutDay = workoutDay
@@ -105,15 +106,9 @@ struct WorkoutDayDetailView: View {
                 }
                 
                 // Start Workout button
-                NavigationLink(destination: ActiveWorkoutView(
-                    exercises: viewModel.exercises,
-                    programId: program.id,
-                    workoutDayId: workoutDay.id,
-                    programName: program.title,
-                    workoutDayName: workoutDay.title,
-                    allPrograms: allPrograms,
-                    progressStore: progressStore
-                )) {
+                Button(action: {
+                    showActiveWorkout = true
+                }) {
                     HStack {
                         Image(systemName: "play.fill")
                             .foregroundColor(.black)
@@ -132,6 +127,17 @@ struct WorkoutDayDetailView: View {
         }
         .navigationTitle("DAY \(String(format: "%02d", workoutDay.dayNumber))")
         .navigationBarTitleDisplayMode(.inline)
+        .fullScreenCover(isPresented: $showActiveWorkout) {
+            ActiveWorkoutView(
+                exercises: viewModel.exercises,
+                programId: program.id,
+                workoutDayId: workoutDay.id,
+                programName: program.title,
+                workoutDayName: workoutDay.title,
+                allPrograms: allPrograms,
+                progressStore: progressStore
+            )
+        }
     }
 }
 
