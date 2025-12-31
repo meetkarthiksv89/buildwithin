@@ -127,13 +127,13 @@ struct MealRow: View {
     VStack(spacing: 16) {
         MealRow(meal: Meal(
             id: "test1",
-            mealType: .morningPreWorkout,
-            name: "Fruit of Choice",
+            mealType: .eveningSnack,
+            name: "Protein Shake",
             isDefault: true,
-            macros: Macronutrients(carbs: 28, fat: 0, protein: 0),
-            calories: 112,
+            macros: Macronutrients(carbs: 0, fat: 0, protein: 27),
+            calories: 108,
             imageURL: nil
-        ), showShuffleButton: false)
+        ), showShuffleButton: true)
         
         MealRow(meal: Meal(
             id: "test2",

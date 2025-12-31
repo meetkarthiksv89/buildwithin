@@ -8,11 +8,10 @@
 import Foundation
 
 enum MealType: String, Codable, Identifiable {
-    case morningPreWorkout = "morning_pre_workout"
     case breakfast = "breakfast"
     case lunch = "lunch"
+    case eveningSnack = "evening_snack"
     case dinner = "dinner"
-    case snack = "snack"  // Optional, for future use
     
     var id: String {
         rawValue
@@ -20,16 +19,14 @@ enum MealType: String, Codable, Identifiable {
     
     var displayName: String {
         switch self {
-        case .morningPreWorkout:
-            return "MORNING PRE-WORKOUT"
         case .breakfast:
             return "BREAKFAST"
         case .lunch:
             return "LUNCH"
+        case .eveningSnack:
+            return "EVENING SNACK"
         case .dinner:
             return "DINNER"
-        case .snack:
-            return "SNACK"
         }
     }
 }

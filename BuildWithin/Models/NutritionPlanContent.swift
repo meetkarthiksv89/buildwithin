@@ -34,7 +34,7 @@ struct NutritionPlanContent: Codable, Identifiable {
     
     // Get all default meals (one per type)
     var defaultMeals: [Meal] {
-        let order: [MealType] = [.morningPreWorkout, .breakfast, .lunch, .dinner, .snack]
+        let order: [MealType] = [.breakfast, .lunch, .eveningSnack, .dinner]
         return order.compactMap { defaultMeal(for: $0) }
     }
     

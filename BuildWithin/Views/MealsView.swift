@@ -15,7 +15,7 @@ struct MealsView: View {
     
     // Initialize active meals from default meals
     private func initializeActiveMeals() {
-        let order: [MealType] = [.morningPreWorkout, .breakfast, .lunch, .dinner, .snack]
+        let order: [MealType] = [.breakfast, .lunch, .eveningSnack, .dinner]
         for mealType in order {
             if let defaultMeal = nutritionPlan.defaultMeal(for: mealType) {
                 activeMeals[mealType] = defaultMeal
@@ -25,7 +25,7 @@ struct MealsView: View {
     
     // Sort meals by meal type order (using active meals)
     private var sortedMeals: [Meal] {
-        let order: [MealType] = [.morningPreWorkout, .breakfast, .lunch, .dinner, .snack]
+        let order: [MealType] = [.breakfast, .lunch, .eveningSnack, .dinner]
         return order.compactMap { activeMeals[$0] }
     }
     
@@ -59,7 +59,7 @@ struct MealsView: View {
                                 MealRowWithNavigation(
                                     meal: meal,
                                     nutritionPlan: nutritionPlan,
-                                    showShuffleButton: meal.mealType != .morningPreWorkout,
+                                    showShuffleButton: nutritionPlan.mealOptions(for: meal.mealType).count > 1,
                                     onShuffleTap: {
                                         pickerMealType = meal.mealType
                                     }
