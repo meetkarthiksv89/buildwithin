@@ -18,6 +18,7 @@ struct ActiveWorkoutView: View {
     
     @StateObject private var viewModel: ActiveWorkoutViewModel
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var navigationState: NavigationState
     @State private var elapsedTime: TimeInterval = 0
     @State private var timer: Timer?
     @State private var showingFinishAlert = false
@@ -253,7 +254,7 @@ struct ActiveWorkoutView: View {
                 progressStore: progressStore,
                 onDismiss: {
                     showCompletionView = false
-                    dismiss()
+                    navigationState.popToRoot()
                 }
             )
             .presentationDetents([.large])
@@ -320,5 +321,6 @@ struct ActiveWorkoutView: View {
             allPrograms: [],
             progressStore: ProgressStore()
         )
+        .environmentObject(NavigationState())
     }
 }

@@ -10,6 +10,7 @@ import SwiftData
 
 struct MainTabView: View {
     @StateObject private var repository = ProgramRepository()
+    @StateObject private var navigationState = NavigationState()
     @Environment(\.modelContext) private var modelContext
     
     private var progressStore: ProgressStoreProtocol {
@@ -34,6 +35,7 @@ struct MainTabView: View {
                 }
         }
         .tint(.appPrimaryGreen)
+        .environmentObject(navigationState)
     }
 }
 

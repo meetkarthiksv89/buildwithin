@@ -8,6 +8,7 @@ import SwiftUI
 
 struct ProgramsListView: View {
     @StateObject private var viewModel: ProgramsListViewModel
+    @EnvironmentObject var navigationState: NavigationState
     let progressStore: ProgressStoreProtocol
     
     init(repository: ProgramRepository, progressStore: ProgressStoreProtocol) {
@@ -117,9 +118,11 @@ struct ProgramsListView: View {
                 await viewModel.loadPrograms()
             }
         }
+        .id(navigationState.stackId)
     }
 }
 
 #Preview {
     ProgramsListView(repository: ProgramRepository(), progressStore: ProgressStore())
+        .environmentObject(NavigationState())
 }
