@@ -57,7 +57,8 @@ class ProgressStore: ProgressStoreProtocol {
     
     // MARK: - ExerciseSetLog
     
-    func saveSetLog(programId: String, log: ExerciseSetLog) throws {
+    func saveSetLog(programId: String, log: ExerciseSetLog, workoutSessionId: UUID?) throws {
+        // For backward compatibility, ignore workoutSessionId
         var progress = loadProgress(for: programId)
         progress.addSetLog(log)
         try saveProgress(progress, for: programId)
@@ -71,5 +72,43 @@ class ProgressStore: ProgressStoreProtocol {
     func getAllSetLogs(programId: String) -> [ExerciseSetLog] {
         let progress = loadProgress(for: programId)
         return Array(progress.exerciseSetLogs.values)
+    }
+    
+    // MARK: - SwiftData Methods (not supported by UserDefaults implementation)
+    
+    func createWorkoutSession(programId: String, workoutDayId: String) throws -> WorkoutSession {
+        throw NSError(domain: "ProgressStore", code: 1, userInfo: [NSLocalizedDescriptionKey: "WorkoutSession not supported by UserDefaults implementation"])
+    }
+    
+    func getWorkoutSession(id: UUID) -> WorkoutSession? {
+        return nil
+    }
+    
+    func getSetLogsForExercise(exerciseId: String, programId: String, from startDate: Date?, to endDate: Date?) -> [SetLog] {
+        // UserDefaults implementation doesn't support date filtering or SetLog
+        return []
+    }
+    
+    func getMostRecentSetLog(exerciseId: String, programId: String) -> SetLog? {
+        // UserDefaults implementation doesn't support SetLog
+        return nil
+    }
+    
+    func getActiveWorkoutSession(programId: String, workoutDayId: String) -> WorkoutSession? {
+        return nil
+    }
+    
+    func finishWorkout(programId: String, workoutSessionId: UUID) throws {
+        throw NSError(domain: "ProgressStore", code: 1, userInfo: [NSLocalizedDescriptionKey: "finishWorkout not supported by UserDefaults implementation"])
+    }
+    
+    // MARK: - History Methods (not supported by UserDefaults implementation)
+    
+    func getAllWorkoutSessions() -> [WorkoutSession] {
+        return []
+    }
+    
+    func getWorkoutSessions(programId: String, workoutDayId: String) -> [WorkoutSession] {
+        return []
     }
 }

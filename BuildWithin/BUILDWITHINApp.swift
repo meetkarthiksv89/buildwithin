@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct BUILDWITHINApp: App {
@@ -13,5 +14,6 @@ struct BUILDWITHINApp: App {
         WindowGroup {
             MainTabView()
         }
+        .modelContainer(for: [WorkoutSession.self, SetLog.self])
     }
 }

@@ -13,8 +13,8 @@ struct DayRow: View {
     let isToday: Bool
     
     var body: some View {
-        if isToday {
-            // Highlighted "TODAY" row
+        if isToday && !workoutDay.isRestDay {
+            // Highlighted "TODAY" row (only for workout days)
             HStack(spacing: 16) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("TODAY")

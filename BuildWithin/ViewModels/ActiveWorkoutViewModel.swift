@@ -18,6 +18,7 @@ class ActiveWorkoutViewModel: ObservableObject {
     private let progressStore: ProgressStoreProtocol
     private let programId: String
     private let workoutDayId: String
+    private var workoutSessionId: UUID?
     
     var currentExercise: Exercise? {
         guard currentExerciseIndex >= 0 && currentExerciseIndex < exercises.count else {
@@ -43,13 +44,41 @@ class ActiveWorkoutViewModel: ObservableObject {
         self.programId = programId
         self.workoutDayId = workoutDayId
         self.progressStore = progressStore
-        loadExistingLogs()
+        
+        // Create workout session
+        do {
+            let session = try progressStore.createWorkoutSession(programId: programId, workoutDayId: workoutDayId)
+            workoutSessionId = session.id
+            workoutStartTime = session.startTime
+            
+            // Load previous values for each exercise
+            loadPreviousWorkoutValues()
+        } catch {
+            print("Error creating workout session: \(error)")
+        }
     }
     
-    private func loadExistingLogs() {
-        let existingLogs = progressStore.getAllSetLogs(programId: programId)
-        for log in existingLogs {
-            setLogs[log.setId] = log
+    private func loadPreviousWorkoutValues() {
+        // For each exercise, get the most recent set log and pre-populate values
+        for exercise in exercises {
+            // Try to get the most recent log for this exercise
+            if let mostRecentLog = progressStore.getMostRecentSetLog(exerciseId: exercise.id, programId: programId) {
+                // Pre-populate all sets of this exercise with the previous values
+                // This gives users a starting point based on their last performance
+                for set in exercise.sets {
+                    // Check if we already have a log for this specific setId (from current session)
+                    if setLogs[set.id] == nil {
+                        let previousLog = ExerciseSetLog(
+                            exerciseId: exercise.id,
+                            setId: set.id,
+                            completedReps: mostRecentLog.completedReps,
+                            completedWeight: mostRecentLog.completedWeight,
+                            isCompleted: false // Don't mark as completed, just pre-populate values
+                        )
+                        setLogs[set.id] = previousLog
+                    }
+                }
+            }
         }
     }
     
@@ -71,7 +100,7 @@ class ActiveWorkoutViewModel: ObservableObject {
         
         // Save immediately
         if let log = setLogs[setId] {
-            try? progressStore.saveSetLog(programId: programId, log: log)
+            try? progressStore.saveSetLog(programId: programId, log: log, workoutSessionId: workoutSessionId)
         }
     }
     
@@ -91,7 +120,7 @@ class ActiveWorkoutViewModel: ObservableObject {
         }
         
         if let log = setLogs[setId] {
-            try? progressStore.saveSetLog(programId: programId, log: log)
+            try? progressStore.saveSetLog(programId: programId, log: log, workoutSessionId: workoutSessionId)
         }
     }
     
@@ -111,7 +140,7 @@ class ActiveWorkoutViewModel: ObservableObject {
         }
         
         if let log = setLogs[setId] {
-            try? progressStore.saveSetLog(programId: programId, log: log)
+            try? progressStore.saveSetLog(programId: programId, log: log, workoutSessionId: workoutSessionId)
         }
     }
     
@@ -134,6 +163,14 @@ class ActiveWorkoutViewModel: ObservableObject {
     }
     
     func finishWorkout() throws {
+        guard let sessionId = workoutSessionId else {
+            throw NSError(domain: "ActiveWorkoutViewModel", code: 1, userInfo: [NSLocalizedDescriptionKey: "No workout session found"])
+        }
+        
+        // Finish the workout session
+        try progressStore.finishWorkout(programId: programId, workoutSessionId: sessionId)
+        
+        // Also save completion for backward compatibility
         let completion = WorkoutDayCompletion(
             workoutDayId: workoutDayId,
             completedAt: Date()

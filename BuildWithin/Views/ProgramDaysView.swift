@@ -58,20 +58,30 @@ struct ProgramDaysView: View {
                             if expandedWeeks.contains(week.weekNumber) {
                                 VStack(spacing: 16) {
                                     ForEach(week.days) { day in
-                                        NavigationLink(destination: WorkoutDayDetailView(
-                                            workoutDay: day,
-                                            program: program,
-                                            repository: repository,
-                                            progressStore: progressStore,
-                                            allPrograms: allPrograms
-                                        )) {
+                                        if day.isRestDay {
+                                            // Rest days are not tappable
                                             DayRow(
                                                 workoutDay: day,
                                                 isCompleted: viewModel.isDayCompleted(day),
                                                 isToday: isToday(day)
                                             )
+                                        } else {
+                                            // Workout days are tappable
+                                            NavigationLink(destination: WorkoutDayDetailView(
+                                                workoutDay: day,
+                                                program: program,
+                                                repository: repository,
+                                                progressStore: progressStore,
+                                                allPrograms: allPrograms
+                                            )) {
+                                                DayRow(
+                                                    workoutDay: day,
+                                                    isCompleted: viewModel.isDayCompleted(day),
+                                                    isToday: isToday(day)
+                                                )
+                                            }
+                                            .buttonStyle(PlainButtonStyle())
                                         }
-                                        .buttonStyle(PlainButtonStyle())
                                     }
                                     .padding(.horizontal)
                                 }
@@ -112,10 +122,14 @@ struct ProgramDaysView: View {
     }
     
     private func isToday(_ workoutDay: WorkoutDay) -> Bool {
-        // Simple logic: first incomplete day is "today"
+        // Simple logic: first incomplete workout day (not rest day) is "today"
         // In a real app, this would use actual date tracking
+        // Rest days should never be marked as "today"
+        if workoutDay.isRestDay {
+            return false
+        }
         let completedDays = viewModel.days.filter { viewModel.isDayCompleted($0) }
-        if let firstIncompleteIndex = viewModel.days.firstIndex(where: { !viewModel.isDayCompleted($0) }) {
+        if let firstIncompleteIndex = viewModel.days.firstIndex(where: { !viewModel.isDayCompleted($0) && !$0.isRestDay }) {
             return viewModel.days[firstIncompleteIndex].id == workoutDay.id
         }
         return false

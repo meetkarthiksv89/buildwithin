@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainTabView: View {
     @StateObject private var repository = ProgramRepository()
-    private let progressStore = ProgressStore()
+    @Environment(\.modelContext) private var modelContext
+    
+    private var progressStore: ProgressStoreProtocol {
+        SwiftDataProgressStore(modelContext: modelContext)
+    }
     
     var body: some View {
         TabView {

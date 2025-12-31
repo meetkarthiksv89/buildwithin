@@ -1,4 +1,3 @@
-//
 //  ProgramsListView.swift
 //  BuildWithin
 //
@@ -54,15 +53,31 @@ struct ProgramsListView: View {
                             
                             Spacer()
                             
-                            Button(action: {}) {
-                                Circle()
-                                    .fill(Color.appCardBackground)
-                                    .frame(width: 40, height: 40)
-                                    .overlay {
-                                        Image(systemName: "person.fill")
-                                            .foregroundColor(.appTextSecondary)
-                                            .font(.system(size: 16))
-                                    }
+                            HStack(spacing: 12) {
+                                NavigationLink(destination: WorkoutHistoryView(
+                                    progressStore: progressStore,
+                                    allPrograms: viewModel.programs
+                                )) {
+                                    Circle()
+                                        .fill(Color.appCardBackground)
+                                        .frame(width: 40, height: 40)
+                                        .overlay {
+                                            Image(systemName: "clock.fill")
+                                                .foregroundColor(.appTextSecondary)
+                                                .font(.system(size: 16))
+                                        }
+                                }
+                                
+                                Button(action: {}) {
+                                    Circle()
+                                        .fill(Color.appCardBackground)
+                                        .frame(width: 40, height: 40)
+                                        .overlay {
+                                            Image(systemName: "person.fill")
+                                                .foregroundColor(.appTextSecondary)
+                                                .font(.system(size: 16))
+                                        }
+                                }
                             }
                         }
                         .padding()

@@ -5,7 +5,7 @@
     "subtitle": "Push • Pull • Legs • Full Body",
     "category": "strength",
     "coverImageURL": "fatloss_4day_cover.jpg",
-    "totalDays": 4,
+    "totalDays": 14,
     "isActive": true
   },
   "workoutDays": [
@@ -28,22 +28,112 @@
       "isRestDay": false
     },
     {
-      "id": "day_legs_03",
+      "id": "day_rest_03",
       "programId": "prog_fatloss_4day_01",
       "dayNumber": 3,
+      "title": "Rest",
+      "description": "Rest day",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "day_legs_04",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 4,
       "title": "Legs",
       "description": "Lower body strength + core.",
       "estimatedDurationMinutes": 50,
       "isRestDay": false
     },
     {
-      "id": "day_full_04",
+      "id": "day_full_05",
       "programId": "prog_fatloss_4day_01",
-      "dayNumber": 4,
+      "dayNumber": 5,
       "title": "Full Body",
       "description": "Full-body compounds + metabolic finisher.",
       "estimatedDurationMinutes": 50,
       "isRestDay": false
+    },
+    {
+      "id": "day_rest_06",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 6,
+      "title": "Rest",
+      "description": "Rest day",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "day_rest_07",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 7,
+      "title": "Rest",
+      "description": "Rest day",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "day_push_08",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 8,
+      "title": "Push",
+      "description": "Chest, shoulders, triceps + short core finisher.",
+      "estimatedDurationMinutes": 45,
+      "isRestDay": false
+    },
+    {
+      "id": "day_pull_09",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 9,
+      "title": "Pull",
+      "description": "Back, biceps + conditioning finisher.",
+      "estimatedDurationMinutes": 45,
+      "isRestDay": false
+    },
+    {
+      "id": "day_rest_10",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 10,
+      "title": "Rest",
+      "description": "Rest day",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "day_legs_11",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 11,
+      "title": "Legs",
+      "description": "Lower body strength + core.",
+      "estimatedDurationMinutes": 50,
+      "isRestDay": false
+    },
+    {
+      "id": "day_full_12",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 12,
+      "title": "Full Body",
+      "description": "Full-body compounds + metabolic finisher.",
+      "estimatedDurationMinutes": 50,
+      "isRestDay": false
+    },
+    {
+      "id": "day_rest_13",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 13,
+      "title": "Rest",
+      "description": "Rest day",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
+    },
+    {
+      "id": "day_rest_14",
+      "programId": "prog_fatloss_4day_01",
+      "dayNumber": 14,
+      "title": "Rest",
+      "description": "Rest day",
+      "estimatedDurationMinutes": 0,
+      "isRestDay": true
     }
   ],
   "exercises": [
@@ -549,7 +639,7 @@
     },
     {
       "id": "ex_legs_sumo_squat",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Sumo Squats - Men",
       "order": 1,
       "equipment": "dumbbell",
@@ -581,7 +671,7 @@
     },
     {
       "id": "ex_legs_back_extension",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Back Extension Machine - Men",
       "order": 2,
       "equipment": "machine",
@@ -613,7 +703,7 @@
     },
     {
       "id": "ex_legs_seated_leg_press",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Seated Machine Leg Press - Men",
       "order": 3,
       "equipment": "machine",
@@ -644,7 +734,7 @@
     },
     {
       "id": "ex_legs_leg_extension",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Leg Extensions - Men",
       "order": 4,
       "equipment": "machine",
@@ -675,7 +765,7 @@
     },
     {
       "id": "ex_legs_seated_leg_curl",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Seated Leg Curls - Men",
       "order": 5,
       "equipment": "machine",
@@ -706,7 +796,7 @@
     },
     {
       "id": "ex_legs_seated_calf_raise",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Seated Calf Raises - Men",
       "order": 6,
       "equipment": "machine",
@@ -737,7 +827,7 @@
     },
     {
       "id": "ex_legs_oblique_crunch",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Oblique Crunches",
       "order": 7,
       "equipment": "bodyweight",
@@ -768,7 +858,7 @@
     },
     {
       "id": "ex_legs_crunch",
-      "workoutDayId": "day_legs_03",
+      "workoutDayId": "day_legs_04",
       "name": "Crunches - Men",
       "order": 8,
       "equipment": "bodyweight",
@@ -799,7 +889,7 @@
     },
     {
       "id": "ex_full_incline_db_press",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Incline Dumbbell Press - Men",
       "order": 1,
       "equipment": "dumbbell",
@@ -831,7 +921,7 @@
     },
     {
       "id": "ex_full_machine_shoulder_press",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Machine Shoulder Press - Men",
       "order": 2,
       "equipment": "machine",
@@ -863,7 +953,7 @@
     },
     {
       "id": "ex_full_front_raise",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Front Raises [Dumbbell] - Men",
       "order": 3,
       "equipment": "dumbbell",
@@ -894,7 +984,7 @@
     },
     {
       "id": "ex_full_db_shrug",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Dumbbell Shrugs - Men",
       "order": 4,
       "equipment": "dumbbell",
@@ -926,7 +1016,7 @@
     },
     {
       "id": "ex_full_seated_leg_press",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Seated Machine Leg Press - Men",
       "order": 5,
       "equipment": "machine",
@@ -957,7 +1047,7 @@
     },
     {
       "id": "ex_full_cable_tricep_pushdown_rope",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Cable Tricep Pushdown [Rope Attachment] - Men",
       "order": 6,
       "equipment": "machine",
@@ -988,7 +1078,7 @@
     },
     {
       "id": "ex_full_machine_crunch",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Machine Crunches - Men",
       "order": 7,
       "equipment": "machine",
@@ -1019,7 +1109,7 @@
     },
     {
       "id": "ex_full_bodyweight_plank",
-      "workoutDayId": "day_full_04",
+      "workoutDayId": "day_full_05",
       "name": "Bodyweight Plank - Men",
       "order": 8,
       "equipment": "bodyweight",
@@ -1042,6 +1132,1007 @@
         },
         {
           "id": "ex_full_bodyweight_plank_s3",
+          "setNumber": 3,
+          "targetReps": null,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_incline_db_press_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Incline Dumbbell Press - Men",
+      "order": 1,
+      "equipment": "dumbbell",
+      "restSeconds": 75,
+      "targetMuscleGroups": [
+        "chest",
+        "shoulders"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_incline_db_press_w2_s1",
+          "setNumber": 1,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_incline_db_press_w2_s2",
+          "setNumber": 2,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_incline_db_press_w2_s3",
+          "setNumber": 3,
+          "targetReps": 10,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_arnold_press_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Arnold Shoulder Press - Men",
+      "order": 2,
+      "equipment": "dumbbell",
+      "restSeconds": 75,
+      "targetMuscleGroups": [
+        "shoulders",
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_arnold_press_w2_s1",
+          "setNumber": 1,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_arnold_press_w2_s2",
+          "setNumber": 2,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_arnold_press_w2_s3",
+          "setNumber": 3,
+          "targetReps": 10,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_cable_chest_fly_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Cable Chest Flys - Men",
+      "order": 3,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "chest"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_cable_chest_fly_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_chest_fly_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_chest_fly_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_cable_lateral_raise_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Cable Lateral Raises - Men",
+      "order": 4,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "shoulders"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_cable_lateral_raise_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_lateral_raise_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_lateral_raise_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_cable_tricep_pushdown_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Cable Tricep Pushdown - Men",
+      "order": 5,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_cable_tricep_pushdown_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_tricep_pushdown_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_tricep_pushdown_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_cable_overhead_extension_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Cable Overhead Extensions - Men",
+      "order": 6,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_cable_overhead_extension_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_overhead_extension_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_cable_overhead_extension_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_decline_crunch_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Decline Crunches - Men",
+      "order": 7,
+      "equipment": "bodyweight",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_decline_crunch_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_decline_crunch_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_decline_crunch_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_push_lying_leg_raise_w2",
+      "workoutDayId": "day_push_08",
+      "name": "Lying Leg Raise",
+      "order": 8,
+      "equipment": "bodyweight",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_push_lying_leg_raise_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_lying_leg_raise_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_push_lying_leg_raise_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_lat_pulldown_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Lat Pulldowns - Men",
+      "order": 1,
+      "equipment": "machine",
+      "restSeconds": 75,
+      "targetMuscleGroups": [
+        "back"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_lat_pulldown_w2_s1",
+          "setNumber": 1,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_lat_pulldown_w2_s2",
+          "setNumber": 2,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_lat_pulldown_w2_s3",
+          "setNumber": 3,
+          "targetReps": 10,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_reverse_pec_dec_fly_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Reverse Pec Dec Fly - Men",
+      "order": 2,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "back",
+        "shoulders"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_reverse_pec_dec_fly_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_reverse_pec_dec_fly_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_reverse_pec_dec_fly_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_bent_over_db_row_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Bent Over Dumbbell Rows - Men",
+      "order": 3,
+      "equipment": "dumbbell",
+      "restSeconds": 75,
+      "targetMuscleGroups": [
+        "back"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_bent_over_db_row_w2_s1",
+          "setNumber": 1,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_bent_over_db_row_w2_s2",
+          "setNumber": 2,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_bent_over_db_row_w2_s3",
+          "setNumber": 3,
+          "targetReps": 10,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_lat_pullover_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Lat Pullovers (With Cable)",
+      "order": 4,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "back",
+        "chest"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_lat_pullover_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_lat_pullover_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_lat_pullover_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_bicep_21_curl_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Bicep 21 Curls - Men",
+      "order": 5,
+      "equipment": "dumbbell",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_bicep_21_curl_w2_s1",
+          "setNumber": 1,
+          "targetReps": 21,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_bicep_21_curl_w2_s2",
+          "setNumber": 2,
+          "targetReps": 21,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_bicep_21_curl_w2_s3",
+          "setNumber": 3,
+          "targetReps": 21,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_hammer_curl_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Hammer Curls - Men",
+      "order": 6,
+      "equipment": "dumbbell",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_hammer_curl_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_hammer_curl_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_hammer_curl_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_reverse_crunch_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Reverse Crunches",
+      "order": 7,
+      "equipment": "bodyweight",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_reverse_crunch_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_reverse_crunch_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_reverse_crunch_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_pull_machine_crunch_w2",
+      "workoutDayId": "day_pull_09",
+      "name": "Machine Crunches - Men",
+      "order": 8,
+      "equipment": "machine",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_pull_machine_crunch_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_machine_crunch_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_pull_machine_crunch_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_sumo_squat_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Sumo Squats - Men",
+      "order": 1,
+      "equipment": "dumbbell",
+      "restSeconds": 90,
+      "targetMuscleGroups": [
+        "legs",
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_sumo_squat_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_sumo_squat_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_sumo_squat_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_back_extension_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Back Extension Machine - Men",
+      "order": 2,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "back",
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_back_extension_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_back_extension_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_back_extension_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_seated_leg_press_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Seated Machine Leg Press - Men",
+      "order": 3,
+      "equipment": "machine",
+      "restSeconds": 90,
+      "targetMuscleGroups": [
+        "legs"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_seated_leg_press_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_seated_leg_press_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_seated_leg_press_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_leg_extension_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Leg Extensions - Men",
+      "order": 4,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "legs"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_leg_extension_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_leg_extension_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_leg_extension_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_seated_leg_curl_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Seated Leg Curls - Men",
+      "order": 5,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "legs"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_seated_leg_curl_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_seated_leg_curl_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_seated_leg_curl_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_seated_calf_raise_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Seated Calf Raises - Men",
+      "order": 6,
+      "equipment": "machine",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "legs"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_seated_calf_raise_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_seated_calf_raise_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_seated_calf_raise_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_oblique_crunch_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Oblique Crunches",
+      "order": 7,
+      "equipment": "bodyweight",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_oblique_crunch_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_oblique_crunch_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_oblique_crunch_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_legs_crunch_w2",
+      "workoutDayId": "day_legs_11",
+      "name": "Crunches - Men",
+      "order": 8,
+      "equipment": "bodyweight",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_legs_crunch_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_crunch_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_legs_crunch_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_incline_db_press_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Incline Dumbbell Press - Men",
+      "order": 1,
+      "equipment": "dumbbell",
+      "restSeconds": 75,
+      "targetMuscleGroups": [
+        "chest",
+        "shoulders"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_incline_db_press_w2_s1",
+          "setNumber": 1,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_incline_db_press_w2_s2",
+          "setNumber": 2,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_incline_db_press_w2_s3",
+          "setNumber": 3,
+          "targetReps": 10,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_machine_shoulder_press_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Machine Shoulder Press - Men",
+      "order": 2,
+      "equipment": "machine",
+      "restSeconds": 75,
+      "targetMuscleGroups": [
+        "shoulders",
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_machine_shoulder_press_w2_s1",
+          "setNumber": 1,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_machine_shoulder_press_w2_s2",
+          "setNumber": 2,
+          "targetReps": 10,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_machine_shoulder_press_w2_s3",
+          "setNumber": 3,
+          "targetReps": 10,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_front_raise_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Front Raises [Dumbbell] - Men",
+      "order": 3,
+      "equipment": "dumbbell",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "shoulders"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_front_raise_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_front_raise_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_front_raise_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_db_shrug_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Dumbbell Shrugs - Men",
+      "order": 4,
+      "equipment": "dumbbell",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "shoulders",
+        "back"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_db_shrug_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_db_shrug_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_db_shrug_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_seated_leg_press_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Seated Machine Leg Press - Men",
+      "order": 5,
+      "equipment": "machine",
+      "restSeconds": 90,
+      "targetMuscleGroups": [
+        "legs"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_seated_leg_press_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_seated_leg_press_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_seated_leg_press_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_cable_tricep_pushdown_rope_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Cable Tricep Pushdown [Rope Attachment] - Men",
+      "order": 6,
+      "equipment": "machine",
+      "restSeconds": 60,
+      "targetMuscleGroups": [
+        "arms"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_cable_tricep_pushdown_rope_w2_s1",
+          "setNumber": 1,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_cable_tricep_pushdown_rope_w2_s2",
+          "setNumber": 2,
+          "targetReps": 12,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_cable_tricep_pushdown_rope_w2_s3",
+          "setNumber": 3,
+          "targetReps": 12,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_machine_crunch_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Machine Crunches - Men",
+      "order": 7,
+      "equipment": "machine",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_machine_crunch_w2_s1",
+          "setNumber": 1,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_machine_crunch_w2_s2",
+          "setNumber": 2,
+          "targetReps": 15,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_machine_crunch_w2_s3",
+          "setNumber": 3,
+          "targetReps": 15,
+          "targetWeight": null
+        }
+      ]
+    },
+    {
+      "id": "ex_full_bodyweight_plank_w2",
+      "workoutDayId": "day_full_12",
+      "name": "Bodyweight Plank - Men",
+      "order": 8,
+      "equipment": "bodyweight",
+      "restSeconds": 45,
+      "targetMuscleGroups": [
+        "core"
+      ],
+      "sets": [
+        {
+          "id": "ex_full_bodyweight_plank_w2_s1",
+          "setNumber": 1,
+          "targetReps": null,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_bodyweight_plank_w2_s2",
+          "setNumber": 2,
+          "targetReps": null,
+          "targetWeight": null
+        },
+        {
+          "id": "ex_full_bodyweight_plank_w2_s3",
           "setNumber": 3,
           "targetReps": null,
           "targetWeight": null
