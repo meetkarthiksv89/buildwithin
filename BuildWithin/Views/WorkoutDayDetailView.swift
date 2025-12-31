@@ -109,6 +109,9 @@ struct WorkoutDayDetailView: View {
                     exercises: viewModel.exercises,
                     programId: program.id,
                     workoutDayId: workoutDay.id,
+                    programName: program.title,
+                    workoutDayName: workoutDay.title,
+                    allPrograms: allPrograms,
                     progressStore: progressStore
                 )) {
                     HStack {

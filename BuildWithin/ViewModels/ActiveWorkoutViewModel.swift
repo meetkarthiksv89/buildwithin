@@ -39,6 +39,10 @@ class ActiveWorkoutViewModel: ObservableObject {
         return currentExerciseIndex == exercises.count - 1
     }
     
+    var sessionId: UUID? {
+        return workoutSessionId
+    }
+    
     init(exercises: [Exercise], programId: String, workoutDayId: String, progressStore: ProgressStoreProtocol) {
         self.exercises = exercises
         self.programId = programId

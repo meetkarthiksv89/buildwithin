@@ -11,6 +11,9 @@ struct ActiveWorkoutView: View {
     let exercises: [Exercise]
     let programId: String
     let workoutDayId: String
+    let programName: String
+    let workoutDayName: String
+    let allPrograms: [ProgramContent]
     let progressStore: ProgressStoreProtocol
     
     @StateObject private var viewModel: ActiveWorkoutViewModel
@@ -18,11 +21,15 @@ struct ActiveWorkoutView: View {
     @State private var elapsedTime: TimeInterval = 0
     @State private var timer: Timer?
     @State private var showingFinishAlert = false
+    @State private var showCompletionView = false
     
-    init(exercises: [Exercise], programId: String, workoutDayId: String, progressStore: ProgressStoreProtocol) {
+    init(exercises: [Exercise], programId: String, workoutDayId: String, programName: String, workoutDayName: String, allPrograms: [ProgramContent], progressStore: ProgressStoreProtocol) {
         self.exercises = exercises
         self.programId = programId
         self.workoutDayId = workoutDayId
+        self.programName = programName
+        self.workoutDayName = workoutDayName
+        self.allPrograms = allPrograms
         self.progressStore = progressStore
         _viewModel = StateObject(wrappedValue: ActiveWorkoutViewModel(
             exercises: exercises,
@@ -233,6 +240,25 @@ struct ActiveWorkoutView: View {
         } message: {
             Text("Are you sure you want to finish this workout?")
         }
+        .sheet(isPresented: $showCompletionView) {
+            WorkoutCompletionView(
+                duration: elapsedTime,
+                exerciseCount: exercises.count,
+                workoutSessionId: viewModel.sessionId,
+                programId: programId,
+                workoutDayId: workoutDayId,
+                programName: programName,
+                workoutDayName: workoutDayName,
+                allPrograms: allPrograms,
+                progressStore: progressStore,
+                onDismiss: {
+                    showCompletionView = false
+                    dismiss()
+                }
+            )
+            .presentationDetents([.large])
+            .interactiveDismissDisabled(false)
+        }
     }
     
     private var progress: Double {
@@ -260,7 +286,8 @@ struct ActiveWorkoutView: View {
     private func finishWorkout() {
         do {
             try viewModel.finishWorkout()
-            dismiss()
+            stopTimer()
+            showCompletionView = true
         } catch {
             print("Error finishing workout: \(error)")
         }
@@ -288,6 +315,9 @@ struct ActiveWorkoutView: View {
             ],
             programId: "prog1",
             workoutDayId: "day1",
+            programName: "Test Program",
+            workoutDayName: "Day 1",
+            allPrograms: [],
             progressStore: ProgressStore()
         )
     }
